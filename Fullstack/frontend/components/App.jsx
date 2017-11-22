@@ -16,7 +16,7 @@ import { AuthRoute } from '../util/route_util';
 
 
 const App = () => (
-  <div>
+  <div className="main-body">
     <div className="nav-container">
       <Link to={"/"} className="header-link">
         <h1>Instagram</h1>
@@ -26,7 +26,7 @@ const App = () => (
 
     <Switch>
       <AuthRoute path="/signup" component={SessionFormContainer} />
-      <AuthRoute path="/login" component={SessionFormContainer} />
+      <AuthRoute path="/" component={SessionFormContainer} />
     </Switch>
 
   </div>

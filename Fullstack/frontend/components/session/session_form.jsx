@@ -22,23 +22,23 @@ class SessionForm extends React.Component {
   handleSubmit(e){
     e.preventDefault();
     const user = this.state;
-    this.props.processForm({user});
+    this.props.processForm(user);
   }
 
   navLink(){
     if (this.props.formType === "login"){
       return (
-        <div>
-          <p>"Don't have an account?"</p>
-          <Link to={"/signup"}>Sign Up</Link>
+        <div className="login-form-redirect">
+          Don't have an account?
+          <Link to={"/signup"}>Sign up</Link>
         </div>
       );
     }
     else {
       return (
-        <div>
-          <p>"Have an account?"</p>
-          <Link to={"/login"}>Login</Link>
+        <div className="login-form-redirect">
+          Have an account?
+          <Link to={"/login"}>Log in</Link>
         </div>
       );
     }
@@ -46,7 +46,7 @@ class SessionForm extends React.Component {
 
   renderErrors(){
     return(
-      <ul>
+      <ul className="login-signup-errors">
         {this.props.errors.map((error, i) => (
           <li key={`error-${i}`}>
             {error}
@@ -62,34 +62,34 @@ class SessionForm extends React.Component {
         <div className="login-form-container">
           <form onSubmit={this.handleSubmit} className="login-form-box">
 
-            <h3>Welcome to Instagram</h3>
-            <br/>
+            <h1>Instagram</h1>
 
             {this.renderErrors()}
-            <br/>
 
-            <div className="login-form">
-              <label>Username:
+            <div className="login-form-entries">
+              <label>
                 <input
                   type="text"
                   value={this.state.username}
                   onChange={this.update("username")}
                   className="login-input"
+                  placeholder="Username"
                 />
               </label>
               <br/>
 
-              <label>Password:
+              <label>
                 <input
-                  type="text"
+                  type="password"
                   value={this.state.password}
                   onChange={this.update("password")}
                   className="login-input"
+                  placeholder="Password"
                 />
               </label>
               <br/>
 
-              <input type="submit" value="Submit" />
+              <input className="submit-button" type="submit" value="Log in" />
             </div>
             <br/>
 
@@ -106,44 +106,49 @@ class SessionForm extends React.Component {
         <div className="login-form-container">
           <form onSubmit={this.handleSubmit} className="login-form-box">
 
-            <h3>Welcome to Instagram</h3>
-            <br/>
-
+            <h1>Instagram</h1>
+            <h2>Sign up to see photos and videos from your friends.</h2>
             {this.renderErrors()}
-            <br/>
 
-            <div className="login-form">
-              <label>Username:
+
+            <div className="login-form-entries">
+              <label>
                 <input
                   type="text"
                   value={this.state.username}
                   onChange={this.update("username")}
                   className="login-input"
+                  placeholder="Username"
                   />
               </label>
               <br/>
 
-              <label>Email:
+              
+
+              <label>
                 <input
                   type="text"
                   value={this.state.email}
                   onChange={this.update("email")}
                   className="login-input"
+                  placeholder="Email"
+
                   />
               </label>
               <br/>
 
-              <label>Password:
+              <label>
                 <input
-                  type="text"
+                  type="password"
                   value={this.state.password}
                   onChange={this.update("password")}
                   className="login-input"
+                  placeholder="Password"
                   />
               </label>
               <br/>
 
-              <input type="submit" value="Submit" />
+              <input className="submit-button" type="submit" value="Sign up" />
             </div>
             <br/>
 
