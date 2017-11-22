@@ -57,6 +57,7 @@ class SessionForm extends React.Component {
   }
 
   render(){
+    let email = null;
     if (this.props.formType === "login"){
       return(
         <div className="login-form-container">
@@ -123,7 +124,6 @@ class SessionForm extends React.Component {
               </label>
               <br/>
 
-              
 
               <label>
                 <input
