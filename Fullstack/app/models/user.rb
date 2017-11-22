@@ -10,7 +10,7 @@ class User < ApplicationRecord
   # has_many :followers
 
   attr_reader :password
-  after_initialize :ensure_session_token
+  after_initialize :ensure_session_token, :ensure_img_url
 
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
@@ -31,6 +31,10 @@ class User < ApplicationRecord
     generate_unique_session_token
     save!
     self.session_token
+  end
+
+  def ensure_img_url
+    self.img_url = "image" unless self.img_url
   end
 
   private

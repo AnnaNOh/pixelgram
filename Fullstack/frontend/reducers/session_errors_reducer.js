@@ -13,7 +13,7 @@ export default(oldState=[], action) => {
     case RECEIVE_SESSION_ERRORS:
       return action.errors;
     case RECEIVE_CURRENT_USER:
-      return _nullErrors;
+      return [];
     default:
       return oldState;
   }

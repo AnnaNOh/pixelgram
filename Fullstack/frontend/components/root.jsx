@@ -3,12 +3,12 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { HashRouter } from 'react-router-dom';
-import Greeting from './App';
+import App from './App';
 
 const Root = ({ store }) => (
   <Provider store={ store }>
     <HashRouter>
-      <Greeting />
+      <App />
     </HashRouter>
   </Provider>
 );
