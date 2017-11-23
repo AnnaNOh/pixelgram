@@ -33,13 +33,15 @@ class Greeting extends React.Component {
         </hgroup>
       );
     }
+    else {
+      this.sessionLinks();
+    }
   }
 
   render(){
     return(
       <div>
         {this.personalGreeting()}
-        {this.sessionLinks()}
       </div>
     );
   }

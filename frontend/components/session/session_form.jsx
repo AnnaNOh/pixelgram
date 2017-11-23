@@ -14,6 +14,11 @@ class SessionForm extends React.Component {
     if (nextProps.loggedIn) {
       this.props.history.push('/');
     }
+
+    if (nextProps.location !== this.props.location) {
+      this.props.removeAllSessionErrors();
+      this.state = {username: "", password: "", email: ""};
+    }
   }
 
   update(field){
@@ -195,6 +200,8 @@ class SessionForm extends React.Component {
                 <input className="submit-button" type="submit" value="Sign up" />
               </div>
               <br/>
+
+              <h4 className="terms-agreements"> By signing up, you agree to our Terms & Privacy Policy </h4>
 
               {this.navLink()}
 

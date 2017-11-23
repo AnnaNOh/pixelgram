@@ -1,5 +1,6 @@
 import {
   RECEIVE_SESSION_ERRORS,
+  REMOVE_ALL_SESSION_ERRORS,
   RECEIVE_CURRENT_USER} from "../actions/session_actions";
 
 const _nullErrors = Object.freeze({
@@ -13,6 +14,8 @@ export default(oldState=[], action) => {
     case RECEIVE_SESSION_ERRORS:
       return action.errors;
     case RECEIVE_CURRENT_USER:
+      return [];
+    case REMOVE_ALL_SESSION_ERRORS:
       return [];
     default:
       return oldState;
