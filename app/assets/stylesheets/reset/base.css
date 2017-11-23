@@ -6,5 +6,5 @@ section, img, div, h2, p, form,
 fieldset, label, input, textarea,
 span, article, footer, time, small,
 ul, img, input, textarea, button {
-  font-family: "Open Sans";
+  font-family: 'Open Sans', sans-serif;
 }
