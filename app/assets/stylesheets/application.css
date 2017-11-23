@@ -15,7 +15,7 @@
  */
 
 
-@import './reset/reset';
-@import './reset/base';
-@import './reset/header';
-@import '/login/login';
+@import 'reset/reset.css';
+@import 'reset/base.css';
+@import 'reset/header.css';
+@import 'login/login.css';
