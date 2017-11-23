@@ -1,71 +1,59 @@
 
-/*login page css*/
-
-/*Nav Bar Styling*/
-
-html, body, main {
-  /*position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;*/
-  height: 100%;
-}
-
-
-.main-body {
-  height: 100%;
-  position: relative;
-  background: #fafafa;
-
-
-}
-
-.nav-container {
-  width: 100%;
-  padding: 10px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  background: #AD234B;
-  color: white;
-  font-weight: bold;
-}
-
-.header-link {
-
-}
-
-.login-signup {
-  display: inline-flex;
-  align-content: flex-end;
-}
-
-.login-signup > a {
-  padding: 0px 10px;
-}
-
-.login-signup:last-child {
-  padding: 0px 20px;
-}
-
-
 /*Login Sign Up Form Styling*/
 
-.login-form-container {
+
+.login-form-all{
+  width: 100%;
+  margin-top: 5%;
+
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+
+.login-image {
+  width: 430px;
+  height: 640px;
+}
+
+
+.login-form-container-login {
   width: 300px;
-  margin: auto;
-  margin-top: 10%;
+  margin-top: 5%;
+  height: 300px;
   padding: 20px;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
 
   text-align: center;
 
+  background: white;
   border: 1px solid #e6e6e6;
   border-radius: 1px;
 }
+
+
+.login-form-container-signup {
+  width: 300px;
+  margin-top: 5%;
+
+  height: 400px;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  text-align: center;
+
+  background: white;
+  border: 1px solid #e6e6e6;
+  border-radius: 1px;
+}
+
 
 .login-form-box > h1 {
   font-size: 40px;
@@ -73,34 +61,40 @@ html, body, main {
   padding-bottom: 10px;
 }
 
+
 .login-form-box > h2 {
   display: inline-block;
   width: 260px;
   font-size: 17px;
   font-weight: 700;
   color: rgb(153, 153, 153);
-  padding-bottom: 30px;
+  padding-bottom: 20px;
 }
+
 
 .login-signup-errors {
   color: rgb(237, 73, 86);
   font-size: 15px;
 
   display: inline-block;
-  width: 260px;
-  padding: 10px;
+  width: 250px;
+  padding-bottom: 20px;
 }
 
+
 .login-input {
+  box-sizing: border-box;
   text-align: left;
   width: 270px;
   border: 1px solid #efefef;
   border-radius: 1px;
   margin: 3px;
-  padding: 5px;
+  padding: 5px 10px;
 }
 
+
 .submit-button {
+  box-sizing: border-box;
   font-weight: bold;
   box-sizing: border-box;
   margin: 5px 10px;
@@ -109,8 +103,8 @@ html, body, main {
   background: rgb(56, 151, 240);
   color: white;
   border-radius: 3px;
-
 }
+
 
 .login-form-redirect > a {
   margin-left: 10px;

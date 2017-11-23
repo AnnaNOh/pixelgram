@@ -1,0 +1,56 @@
+
+/*login page css*/
+
+/*Nav Bar Styling*/
+
+html, body, main {
+  /*position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;*/
+  height: 100%;
+}
+
+
+.main-body {
+  height: 100%;
+  position: relative;
+  background: #fafafa;
+
+
+}
+
+.nav-container {
+  width: 100%;
+  padding: 10px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  box-sizing: border-box;
+
+  background: #AD234B;
+  color: white;
+  font-weight: bold;
+}
+
+.header-link {
+  padding-left: 20px;
+}
+
+
+.login-signup {
+  display: inline-flex;
+  align-content: flex-end;
+}
+
+.login-signup > a {
+  padding: 0px 10px;
+}
+
+
+.login-signup:last-child {
+  padding-right: 20px;
+}
