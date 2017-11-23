@@ -17,8 +17,6 @@ html, body, main {
   height: 100%;
   position: relative;
   background: #fafafa;
-
-
 }
 
 .nav-container {
@@ -34,6 +32,16 @@ html, body, main {
   background: #AD234B;
   color: white;
   font-weight: bold;
+}
+
+.nav-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.nav-right {
+  padding-right: 20px;
 }
 
 .header-link {

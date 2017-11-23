@@ -21,7 +21,7 @@
 .login-form-container-login {
   width: 300px;
   margin-top: 5%;
-  height: 300px;
+  height: 400px;
   padding: 20px;
 
   display: flex;
@@ -40,7 +40,7 @@
   width: 300px;
   margin-top: 5%;
 
-  height: 400px;
+  height: 500px;
   padding: 20px;
 
   display: flex;
@@ -93,11 +93,31 @@
 }
 
 
+/*OR with the lines on the sides*/
+
+.login-form-demo-or {
+  width: 270px;
+  margin: 5px auto 20px auto;
+  border-bottom: 1px solid #c7c7c7;
+  line-height: 0.1em;
+}
+
+.login-form-demo-or > span {
+  padding: 0px 15px;
+
+  background: white;
+  color: rgb(153, 153, 153);
+  font-size: 15px;
+  font-weight: bold;
+}
+
+
+
 .submit-button {
   box-sizing: border-box;
   font-weight: bold;
   box-sizing: border-box;
-  margin: 5px 10px;
+  margin: 10px 10px;
   padding: 3px 20px;
   width: 270px;
   background: rgb(56, 151, 240);
@@ -109,4 +129,8 @@
 .login-form-redirect > a {
   margin-left: 10px;
   color: #3897f0;
+}
+
+.login-form-box > button {
+  margin-bottom: 20px;
 }

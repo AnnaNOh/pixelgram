@@ -18,10 +18,14 @@ import { AuthRoute } from '../util/route_util';
 const App = () => (
   <div className="main-body">
     <div className="nav-container">
-      <Link to={"/"} className="header-link">
-        <h1>Instagram</h1>
-      </Link>
-      <GreetingContainer />
+      <div className="nav-left">
+        <Link to={"/"} className="header-link">
+          <h1>Instagram</h1>
+        </Link>
+      </div>
+      <div className="nav-right">
+        <GreetingContainer />
+      </div>
     </div>
 
     <Switch>

@@ -82,9 +82,15 @@ class SessionForm extends React.Component {
 
               {this.renderErrors()}
 
-              <button onClick={this.handleDemo}>
+              <button className="submit-button" onClick={this.handleDemo}>
                 Demo log in
               </button>
+
+              <div className="login-form-demo-or">
+                <span>
+                  OR
+                </span>
+              </div>
 
               <div className="login-form-entries">
                 <label>
@@ -134,9 +140,20 @@ class SessionForm extends React.Component {
         <div className="login-form-container-signup">
             <form onSubmit={this.handleSubmit} className="login-form-box">
 
+
               <h1>Instagram</h1>
               <h2>Sign up to see photos and videos from your friends.</h2>
               {this.renderErrors()}
+
+              <button className="submit-button" onClick={this.handleDemo}>
+                Demo log in
+              </button>
+
+              <div className="login-form-demo-or">
+                <span>
+                  OR
+                </span>
+              </div>
 
 
               <div className="login-form-entries">
