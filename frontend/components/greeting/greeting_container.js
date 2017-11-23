@@ -7,9 +7,8 @@ const mapStateToProps = ({ session }) => ({
   currentUser: session.currentUser
 });
 
-const mapDispatchToProps = (dispatch, ownProps ) => {
+const mapDispatchToProps = (dispatch, ownProps) => {
   console.log(ownProps);
-  console.log(ownProps.location);
   const formType = ownProps.location.pathname.slice(1);
 
 
