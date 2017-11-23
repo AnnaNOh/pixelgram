@@ -7,11 +7,16 @@ const mapStateToProps = ({ session }) => ({
   currentUser: session.currentUser
 });
 
-const mapDispatchToProps = dispatch => ({
-  logout: () => dispatch(logout())
-});
+const mapDispatchToProps = (dispatch, ownProps ) => {
+  console.log(ownProps);
+  console.log(ownProps.location);
+  const formType = ownProps.location.pathname.slice(1);
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Greeting);
+
+  return{
+    formType,
+    logout: () => dispatch(logout())
+  };
+};
+
+export default connect(mapStateToProps,mapDispatchToProps)(Greeting);

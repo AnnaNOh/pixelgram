@@ -17,21 +17,23 @@ import { AuthRoute } from '../util/route_util';
 
 const App = () => (
   <div className="main-body">
+
     <div className="nav-container">
       <div className="nav-left">
         <Link to={"/"} className="header-link">
           <h1>Instagram</h1>
         </Link>
       </div>
+
       <div className="nav-right">
-        <GreetingContainer />
+        <Route path="/" component={GreetingContainer} />
       </div>
     </div>
 
-    <Switch>
+    <div>
       <AuthRoute path="/login" component={SessionFormContainer} />
       <AuthRoute path="/signup" component={SessionFormContainer} />
-    </Switch>
+    </div>
 
   </div>
 );
