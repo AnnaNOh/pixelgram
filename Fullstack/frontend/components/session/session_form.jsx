@@ -6,6 +6,7 @@ class SessionForm extends React.Component {
   constructor(props){
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
     this.state = {username: "", password: "", email: ""};
   }
 
@@ -23,6 +24,12 @@ class SessionForm extends React.Component {
     e.preventDefault();
     const user = this.state;
     this.props.processForm(user);
+  }
+
+  handleDemo(e){
+    e.preventDefault();
+    const user = {username: "user", password: "password"};
+    this.props.login(user);
   }
 
   navLink(){
@@ -70,9 +77,14 @@ class SessionForm extends React.Component {
 
             <form onSubmit={this.handleSubmit} className="login-form-box">
 
+
               <h1>Instagram</h1>
 
               {this.renderErrors()}
+
+              <button onClick={this.handleDemo}>
+                Demo log in
+              </button>
 
               <div className="login-form-entries">
                 <label>
