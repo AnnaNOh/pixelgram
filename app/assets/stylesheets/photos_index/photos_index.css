@@ -1,0 +1,14 @@
+
+/*Photos Index Page Styling*/
+
+
+.photos-index-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  width:500px;
+  margin: 5% auto;
+  border: 1px solid black;
+
+}

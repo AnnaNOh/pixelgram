@@ -5,7 +5,12 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
 
-  # has_many :photos
+  has_many :photos,
+    primary_key: :id,
+    foreign_key: :author_id,
+    class_name: :Photo
+
+
   # has_many :likes
   # has_many :followers
 

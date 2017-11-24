@@ -13,7 +13,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 import GreetingContainer from './greeting/greeting_container';
 import SessionFormContainer from './session/session_form_container';
-
+import PhotoIndexContainer from './photos/photos_index_container';
 
 
 const App = () => (
@@ -25,7 +25,6 @@ const App = () => (
           <h1>Instagram</h1>
         </Link>
       </div>
-
       <div className="nav-right">
         <Route path="/" component={GreetingContainer} />
       </div>
@@ -37,6 +36,8 @@ const App = () => (
       <AuthRoute path="/login" component={SessionFormContainer} />
       <AuthRoute path="/signup" component={SessionFormContainer} />
     </Switch>
+
+    <ProtectedRoute exact path="/" component={PhotoIndexContainer} />
 
   </div>
 );
