@@ -14,7 +14,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 
   return{
     formType,
-    logout: () => dispatch(logout())
+    logout: () => dispatch( logout() ).then(()=>history.push('/login'))
   };
 };
 
