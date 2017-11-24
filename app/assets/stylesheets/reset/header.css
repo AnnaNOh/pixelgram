@@ -29,8 +29,12 @@ html, body, main {
 
   box-sizing: border-box;
 
-  background: #AD234B;
-  color: white;
+  /*background: #AD234B;*/
+  /*background: #fafafa;*/
+  background: white;
+  border-bottom: 1px solid #e6e6e6;
+
+  color: rgb(153, 153, 153);
   font-weight: bold;
 }
 
@@ -38,6 +42,12 @@ html, body, main {
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  padding-left: 10px;
+}
+
+.nav-bar-instagram-logo {
+  width: 110px;
 }
 
 .nav-right {
@@ -48,6 +58,18 @@ html, body, main {
   padding-left: 20px;
 }
 
+.header-group {
+  display: flex;
+  flex-direction: row;
+}
+
+.header-name {
+  padding: 10px 0;
+}
+
+.header-button {
+  padding: 10px 0px 10px 15px;
+}
 
 .login-signup {
   display: inline-flex;

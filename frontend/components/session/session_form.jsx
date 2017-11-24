@@ -75,7 +75,7 @@ class SessionForm extends React.Component {
         <div className="login-form-all">
           <img
             className="login-image"
-            src="http://res.cloudinary.com/annaoh/image/upload/v1511390018/login1_h72aid.png"
+            src="http://res.cloudinary.com/annaoh/image/upload/v1511564902/login1_rnnxgs.png"
           />
 
         <div className="login-form-container-login">
@@ -83,7 +83,10 @@ class SessionForm extends React.Component {
             <form onSubmit={this.handleSubmit} className="login-form-box">
 
 
-              <h1>Instagram</h1>
+              <img
+                className="login-instagram-logo"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png"
+              />
 
               {this.renderErrors()}
 
@@ -139,14 +142,18 @@ class SessionForm extends React.Component {
         <div className="login-form-all">
           <img
             className="login-image"
-            src="http://res.cloudinary.com/annaoh/image/upload/v1511390018/login1_h72aid.png"
+            src="http://res.cloudinary.com/annaoh/image/upload/v1511564902/login1_rnnxgs.png"
           />
 
         <div className="login-form-container-signup">
             <form onSubmit={this.handleSubmit} className="login-form-box">
 
 
-              <h1>Instagram</h1>
+              <img
+                className="login-instagram-logo"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png"
+              />
+            
               <h2>Sign up to see photos and videos from your friends.</h2>
               {this.renderErrors()}
 

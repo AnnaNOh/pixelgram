@@ -21,9 +21,10 @@ const App = () => (
 
     <div className="nav-container">
       <div className="nav-left">
-        <Link to={"/"} className="header-link">
-          <h1>Instagram</h1>
-        </Link>
+        <img
+          className="nav-bar-instagram-logo"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png"
+        />
       </div>
       <div className="nav-right">
         <Route path="/" component={GreetingContainer} />

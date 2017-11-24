@@ -13,14 +13,22 @@
 
 
 .login-image {
-  width: 430px;
-  height: 640px;
+  width: 375px;
+  height: 600px;
 }
 
+.login-instagram-logo {
+  width:175px;
+  margin: 0 auto;
+
+}
 
 .login-form-container-login {
   width: 300px;
-  margin-top: 3%;
+  /*margin-top: 1%;*/
+  margin-left: 2%;
+  margin-right: 5%;
+
   height: 400px;
   padding: 20px;
 
@@ -31,14 +39,15 @@
   text-align: center;
 
   background: white;
-  border: 1px solid #e6e6e6;
-  border-radius: 1px;
+  /*border: 1px solid #e6e6e6;
+  border-radius: 1px;*/
 }
 
 
 .login-form-container-signup {
   width: 300px;
-  margin-top: 3%;
+  /*margin-top: 1%;*/
+  margin-right: 5%;
 
   height: 570px;
   padding: 20px;
@@ -50,8 +59,8 @@
   text-align: center;
 
   background: white;
-  border: 1px solid #e6e6e6;
-  border-radius: 1px;
+  /*border: 1px solid #e6e6e6;
+  border-radius: 1px;*/
 }
 
 
@@ -71,6 +80,12 @@
   padding-bottom: 20px;
 }
 
+.login-form-box > h4 {
+  width: 250px;
+  margin: 0 auto 20px auto;
+  font-weight: normal;
+  color: rgb(153, 153, 153);
+}
 
 .login-signup-errors {
   color: rgb(237, 73, 86);
@@ -118,7 +133,7 @@
   font-weight: bold;
   box-sizing: border-box;
   margin: 10px 10px;
-  padding: 3px 20px;
+  padding: 5px 20px;
   width: 270px;
   background: rgb(56, 151, 240);
   color: white;
