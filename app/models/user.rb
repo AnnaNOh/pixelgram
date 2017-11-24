@@ -10,9 +10,28 @@ class User < ApplicationRecord
     foreign_key: :author_id,
     class_name: :Photo
 
+  has_many :follows,
+    primary_key: :id,
+    foreign_key: :followers_id,
+    class_name: :Follow
+
+  has_many :follows_from_followers,
+    primary_key: :id,
+    foreign_key: :following_id,
+    class_name: :Follow
+
+  has_many :followers,
+    source: :followers,
+    through: :follows_from_followers
+
+  has_many :followees,
+    source: :followees,
+    through: :follows
+
+
 
   # has_many :likes
-  # has_many :followers
+
 
   attr_reader :password
   after_initialize :ensure_session_token, :ensure_img_url
