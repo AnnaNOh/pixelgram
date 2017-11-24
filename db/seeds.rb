@@ -9,7 +9,7 @@
 User.destroy_all
 Photo.destroy_all
 
-user1 = User.create!(username: "user", email: "email", password: "password", img_url: "image")
+user1 = User.create!(username: "user",  email: "email",  password: "password", img_url: "image")
 user2 = User.create!(username: "user2", email: "email2", password: "password", img_url: "image2")
 user3 = User.create!(username: "user3", email: "email3", password: "password", img_url: "image3")
 user4 = User.create!(username: "user4", email: "email4", password: "password", img_url: "image4")
