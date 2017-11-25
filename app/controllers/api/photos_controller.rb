@@ -25,7 +25,15 @@ class Api::PhotosController < ApplicationController
 
 # change this to select relevant photos later
   def index
-    @photos = Photo.all
+    @user = current_user
+    @photos = []
+    @photos.concat(@user.photos)
+
+    @followees = current_user.followees
+    @followees.each do |followee|
+      @photos.concat(followee.photos)
+    end
+
   end
 
   def destroy
