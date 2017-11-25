@@ -14,7 +14,7 @@ class PhotoIndex extends React.Component {
   render(){
     console.log(this.props);
     return(
-      <div  >
+      <div>
 
         <ul className="photos-index-container">
           {this.props.photos.map(photo => (
@@ -24,6 +24,7 @@ class PhotoIndex extends React.Component {
             />
           ))}
         </ul>
+        
       </div>
     );
   }
