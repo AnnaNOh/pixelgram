@@ -25,7 +25,7 @@ const App = () => (
           <img
             className="nav-bar-instagram-logo"
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png"
-            />
+          />
         </Link>
       </div>
       <div className="nav-right">
