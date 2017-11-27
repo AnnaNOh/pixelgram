@@ -7,10 +7,6 @@ class Api::LikesController < ApplicationController
 
     @like.photo_id = params[:photo_id]
 
-    puts('hello world i am the params')
-    puts(@user.id)
-    puts (@like)
-
     if @like.save!
       @photo = @like.photo
       render 'api/photos/show'
@@ -20,15 +16,7 @@ class Api::LikesController < ApplicationController
   end
 
   def destroy
-        puts('hello world i am the params')
-        puts(params)
     @like = Like.find_by(user_id: current_user.id, photo_id: params[:id]);
-      puts("hi")
-      puts(@like)
-      puts("hi")
-      puts(current_user)
-      puts("hi")
-      puts(current_user.likes)
     @photo = @like.photo
 
     if @like
