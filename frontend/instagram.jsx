@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from "./store/store";
 import { login, signup, logout } from "./actions/session_actions";
-import { fetchPhotos } from "./actions/photos";
+import { fetchPhotos, addLike, deleteLike } from "./actions/photos";
 
 document.addEventListener("DOMContentLoaded", ()=> {
 
@@ -23,7 +23,8 @@ document.addEventListener("DOMContentLoaded", ()=> {
   window.signup = signup;
   window.logout = logout;
   window.fetchPhotos = () => dispatch(fetchPhotos());
-
+  window.addLike = id => dispatch(addLike(id));
+  window.deleteLike = id => dispatch(deleteLike(id));
 
   ReactDOM.render(<Root store={store}/>, root);
 });

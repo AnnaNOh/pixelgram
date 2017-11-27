@@ -12,6 +12,6 @@
       .drop(1)
       .join(" ") + " AGO"
     json.likes photo.likes.count
-    json.likers photo.likes.map(& :user_id)
+    json.liked photo.likes.any?{ |like| like.user_id == current_user.id }
   end
 end

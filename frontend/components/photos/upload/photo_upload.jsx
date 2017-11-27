@@ -10,7 +10,8 @@ class PhotoUpload extends React.Component {
       modalIsOpen: false,
       img_url: "",
       body: "",
-      author_id: this.props.currentUser.id
+      author_id: this.props.currentUser.id,
+      likes: []
     };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
@@ -42,8 +43,8 @@ class PhotoUpload extends React.Component {
 
     cloudinary.openUploadWidget(window.cloudinary_options, function(error, results){
      if(!error){
-       this.state.img_url = results[0].url;
-       this.forceUpdate(); // needed to show preview image
+       let newState = Object.assign({}, this.state, {img_url: results[0].url});
+       this.setState(newState);
      }
     }.bind(this));
   }

@@ -1,0 +1,50 @@
+/*.ReactModal__Body--open {
+  background-color: gray;
+  opacity: 0.7;
+}*/
+
+.photo-show-modal {
+  width: 955px;
+  height: 600px;
+  margin: 0 auto;
+  margin-top: 10%;
+
+  background: white;
+  border: 1px solid #e6e6e6;
+  border-radius: 1px;
+}
+
+.photo-show-modal-div {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+
+  background: white;
+}
+
+.photo-show-image {
+  width: 600px;
+  height: 600px;
+}
+
+.photo-show-comment {
+  width: 335px;
+  margin-left: 20px;
+}
+
+.photo-show-comment-top {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.photo-show-body {
+  display: flex;
+  flex-direction: row;
+}
+
+.close-button {
+  font-size: 30px;
+  margin: -0.5% 0 0 -2.5%;
+  font-weight: 700;
+}

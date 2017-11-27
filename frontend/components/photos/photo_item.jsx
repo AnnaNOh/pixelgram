@@ -43,7 +43,6 @@ class PhotoItem extends React.Component {
             <div className="photo-bottom-icon-bar">
               <LikeContainer
                 photo={photo}
-                likers={photo.likers}
                 photo_id={photo.id} />
             </div>
             <div className="photo-bottom-items">
@@ -56,12 +55,10 @@ class PhotoItem extends React.Component {
             </div>
           </div>
 
-          <Modal
+          <Modal className="photo-show-modal"
             isOpen={this.state.modalIsOpen}
             onClose={this.closeModal}>
-            <div className="photo-show-modal">
-              <button className="close-button"
-                onClick={ this.closeModal }>×</button>
+            <div className="photo-show-modal-div">
               <img
                 className="photo-show-image"
                 src={photo.img_url}
@@ -72,10 +69,14 @@ class PhotoItem extends React.Component {
                   <h3>{photo.author.username}</h3>
                 </div>
                 <div className="photo-show-comment-body">
-                  <h4>{photo.author.username}</h4>
-                  <h4>{photo.body}</h4>
+                  <div className="photo-show-body">
+                    <h4>{photo.author.username}</h4>
+                    <h4>{photo.body}</h4>
+                  </div>
                 </div>
               </div>
+              <button className="close-button"
+                onClick={ this.closeModal }>×</button>
             </div>
           </Modal>
 
