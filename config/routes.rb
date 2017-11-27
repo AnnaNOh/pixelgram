@@ -12,4 +12,6 @@ Rails.application.routes.draw do
     resources :likes, only: [:create, :destroy]
   end
 
+  resources :profiles, :defaults => {:format => 'json'}
+
 end
