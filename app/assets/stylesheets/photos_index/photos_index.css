@@ -1,6 +1,13 @@
 
 /*Photos Index Page Styling*/
+.photo-bottom-icon-bar {
+  margin-top: 10px;
+  font-size: 25px;
+}
 
+.liked-icon {
+  color: pink;
+}
 
 .photos-index-container {
   display: flex;

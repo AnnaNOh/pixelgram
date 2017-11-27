@@ -15,6 +15,7 @@ const receiveSinglePhoto = photo => ({
   photo
 });
 
+
 export const fetchPhotos = () => dispatch => {
   return APIUtil.getPhotos().then(photos => dispatch(receivePhotos(photos)));
 };
@@ -25,4 +26,12 @@ export const fetchPhoto = id => dispatch => {
 
 export const uploadPhoto = (photo) => dispatch => {
   return APIUtil.createPhoto(photo).then(photo => dispatch(receiveSinglePhoto(photo)));
+};
+
+export const addLike = photo_id => dispatch => {
+  return APIUtil.addLike(photo_id).then(photo => dispatch(receiveSinglePhoto(photo)));
+};
+
+export const deleteLike = photo_id => dispatch => {
+  return APIUtil.deleteLike(photo_id).then(photo => dispatch(receiveSinglePhoto(photo)));
 };

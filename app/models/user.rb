@@ -28,9 +28,7 @@ class User < ApplicationRecord
     source: :followees,
     through: :follows
 
-
-
-  # has_many :likes
+  has_many :likes
 
 
   attr_reader :password

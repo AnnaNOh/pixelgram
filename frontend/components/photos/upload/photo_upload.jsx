@@ -87,7 +87,7 @@ class PhotoUpload extends React.Component {
 
               <button
                 className="close-button"
-                onClick={ this.closeModal}>
+                onClick={ this.closeModal }>
                 Cancel
               </button>
 

@@ -8,33 +8,58 @@
 
 User.destroy_all
 Photo.destroy_all
+Follow.destroy_all
+Like.destroy_all
 
+# Users
 user1 = User.create!(username: "user",  email: "email",  password: "password", img_url: "image")
 user2 = User.create!(username: "user2", email: "email2", password: "password", img_url: "image2")
 user3 = User.create!(username: "user3", email: "email3", password: "password", img_url: "image3")
 user4 = User.create!(username: "user4", email: "email4", password: "password", img_url: "image4")
 user5 = User.create!(username: "user5", email: "email5", password: "password", img_url: "image5")
 
+# Photos
+photo2 = Photo.create!(body: "body2", author_id: user1.id, img_url: "http://res.cloudinary.com/annaoh/image/upload/c_scale,h_600/c_scale,h_600,w_600/v1511728102/tumblr_njomamiJP51qfirfao1_1280_pf2tpk.jpg")
+photo5 = Photo.create!(body: "body5", author_id: user3.id, img_url: "http://res.cloudinary.com/annaoh/image/upload/c_scale,h_600,w_600/v1511726663/vangoghmuseum-s0029V1962-1920_nwkpjd.jpg")
+photo9 = Photo.create!(body: "body9", author_id: user5.id, img_url: "http://res.cloudinary.com/annaoh/image/upload/c_pad,w_400/c_crop,h_600,w_600,x_0,y_300/v1511728159/Art-Poster-Advertisement-WPA-Brookefield-Zoo_kei4am.jpg")
+photo4 = Photo.create!(body: "body4", author_id: user2.id, img_url: "http://res.cloudinary.com/annaoh/image/upload/c_crop,h_600,w_600,x_780,y_80/v1511726666/vangoghmuseum-s0149V1962-1920_fcw1me.jpg")
+photo1 = Photo.create!(body: "body1", author_id: user1.id, img_url: "http://res.cloudinary.com/annaoh/image/upload/c_scale,h_600/c_crop,h_600,w_600/v1511728108/tumblr_olpc0qs6cb1qfirfao1_1280_hymylh.jpg")
+photo7 = Photo.create!(body: "body7", author_id: user4.id, img_url: "http://res.cloudinary.com/annaoh/image/upload/c_scale,w_600/c_crop,h_600,w_600/v1511728088/Design-Paper-Pattern-Blue-flower-849x1080_ivdkho.jpg")
+photo6 = Photo.create!(body: "body6", author_id: user3.id, img_url: "http://res.cloudinary.com/annaoh/image/upload/c_scale,h_600,w_600/v1511726663/vangoghmuseum-s0066V1962-1920_xe8uvp.jpg")
+photo10 = Photo.create!(body: "body10", author_id: user5.id, img_url: "http://res.cloudinary.com/annaoh/image/upload/c_scale,h_600/c_crop,h_600,w_600/v1511728107/tumblr_nk1aqvkSVE1qfirfao1_1280_zagmbu.jpg")
+photo3 = Photo.create!(body: "body3", author_id: user2.id, img_url: "http://res.cloudinary.com/annaoh/image/upload/c_scale,h_600,w_600,x_0/v1511726662/vangoghmuseum-s0030V1962-1920_ykxgsv.jpg")
+photo8 = Photo.create!(body: "body8", author_id: user4.id, img_url: "http://res.cloudinary.com/annaoh/image/upload/c_scale,w_700/c_crop,h_600,w_600/v1511728368/Design-Ceramic-Mosaic-pattern.jpt_-687x1080_uv2dvr.jpg")
 
-photo1 = Photo.create!(img_url: "http://res.cloudinary.com/annaoh/image/upload/c_scale,h_600/c_crop,h_600,w_600/v1511728108/tumblr_olpc0qs6cb1qfirfao1_1280_hymylh.jpg", body: "body1", author_id: user1.id)
-photo2 = Photo.create!(img_url: "http://res.cloudinary.com/annaoh/image/upload/c_scale,h_600/c_scale,h_600,w_600/v1511728102/tumblr_njomamiJP51qfirfao1_1280_pf2tpk.jpg", body: "body2", author_id: user1.id)
-photo3 = Photo.create!(img_url: "http://res.cloudinary.com/annaoh/image/upload/c_scale,h_600,w_600,x_0/v1511726662/vangoghmuseum-s0030V1962-1920_ykxgsv.jpg", body: "body3", author_id: user2.id)
-photo4 = Photo.create!(img_url: "http://res.cloudinary.com/annaoh/image/upload/c_crop,h_600,w_600,x_780,y_80/v1511726666/vangoghmuseum-s0149V1962-1920_fcw1me.jpg", body: "body4", author_id: user2.id)
-photo5 = Photo.create!(img_url: "http://res.cloudinary.com/annaoh/image/upload/c_scale,h_600,w_600/v1511726663/vangoghmuseum-s0029V1962-1920_nwkpjd.jpg", body: "body5", author_id: user3.id)
-photo6 = Photo.create!(img_url: "http://res.cloudinary.com/annaoh/image/upload/c_scale,h_600,w_600/v1511726663/vangoghmuseum-s0066V1962-1920_xe8uvp.jpg", body: "body6", author_id: user3.id)
-photo7 = Photo.create!(img_url: "http://res.cloudinary.com/annaoh/image/upload/c_scale,w_600/c_crop,h_600,w_600/v1511728088/Design-Paper-Pattern-Blue-flower-849x1080_ivdkho.jpg", body: "", author_id: user4.id)
-photo8 = Photo.create!(img_url: "http://res.cloudinary.com/annaoh/image/upload/c_scale,w_700/c_crop,h_600,w_600/v1511728368/Design-Ceramic-Mosaic-pattern.jpt_-687x1080_uv2dvr.jpg", body: "", author_id: user4.id)
-photo9 = Photo.create!(img_url: "http://res.cloudinary.com/annaoh/image/upload/c_pad,w_400/c_crop,h_600,w_600,x_0,y_300/v1511728159/Art-Poster-Advertisement-WPA-Brookefield-Zoo_kei4am.jpg", body: "", author_id: user4.id)
-photo10 = Photo.create!(img_url: "http://res.cloudinary.com/annaoh/image/upload/c_scale,h_600/c_crop,h_600,w_600/v1511728107/tumblr_nk1aqvkSVE1qfirfao1_1280_zagmbu.jpg", body: "body10", author_id: user1.id)
-
-
+# Follows
 follow1 = Follow.create!(following_id: user2.id, followers_id: user1.id)
-follow1 = Follow.create!(following_id: user3.id, followers_id: user1.id)
-follow1 = Follow.create!(following_id: user3.id, followers_id: user2.id)
-follow1 = Follow.create!(following_id: user4.id, followers_id: user2.id)
-follow1 = Follow.create!(following_id: user4.id, followers_id: user3.id)
-follow1 = Follow.create!(following_id: user5.id, followers_id: user3.id)
-follow1 = Follow.create!(following_id: user5.id, followers_id: user4.id)
-follow1 = Follow.create!(following_id: user1.id, followers_id: user4.id)
-follow1 = Follow.create!(following_id: user1.id, followers_id: user5.id)
-follow1 = Follow.create!(following_id: user2.id, followers_id: user5.id)
+follow2 = Follow.create!(following_id: user3.id, followers_id: user1.id)
+follow3 = Follow.create!(following_id: user3.id, followers_id: user2.id)
+follow4 = Follow.create!(following_id: user4.id, followers_id: user2.id)
+follow5 = Follow.create!(following_id: user4.id, followers_id: user3.id)
+follow6 = Follow.create!(following_id: user5.id, followers_id: user3.id)
+follow7 = Follow.create!(following_id: user5.id, followers_id: user4.id)
+follow8 = Follow.create!(following_id: user1.id, followers_id: user4.id)
+follow9 = Follow.create!(following_id: user1.id, followers_id: user5.id)
+follow10 = Follow.create!(following_id: user2.id, followers_id: user5.id)
+
+# Likes
+like1 = Like.create!(user_id: user1.id, photo_id: photo3.id)
+like2 = Like.create!(user_id: user1.id, photo_id: photo4.id)
+like3 = Like.create!(user_id: user1.id, photo_id: photo5.id)
+like4 = Like.create!(user_id: user1.id, photo_id: photo6.id)
+like5 = Like.create!(user_id: user2.id, photo_id: photo5.id)
+like6 = Like.create!(user_id: user2.id, photo_id: photo6.id)
+like7 = Like.create!(user_id: user2.id, photo_id: photo7.id)
+like8 = Like.create!(user_id: user2.id, photo_id: photo8.id)
+like9 = Like.create!(user_id: user3.id, photo_id: photo7.id)
+like10 = Like.create!(user_id: user3.id, photo_id: photo8.id)
+like11 = Like.create!(user_id: user3.id, photo_id: photo9.id)
+like12 = Like.create!(user_id: user3.id, photo_id: photo10.id)
+like13 = Like.create!(user_id: user4.id, photo_id: photo9.id)
+like14 = Like.create!(user_id: user4.id, photo_id: photo10.id)
+like15 = Like.create!(user_id: user4.id, photo_id: photo1.id)
+like16 = Like.create!(user_id: user4.id, photo_id: photo2.id)
+like17 = Like.create!(user_id: user5.id, photo_id: photo1.id)
+like18 = Like.create!(user_id: user5.id, photo_id: photo2.id)
+like19 = Like.create!(user_id: user5.id, photo_id: photo3.id)
+like20 = Like.create!(user_id: user5.id, photo_id: photo4.id)

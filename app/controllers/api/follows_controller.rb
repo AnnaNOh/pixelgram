@@ -2,8 +2,8 @@ class Api::FollowsController < ApplicationController
 
   def create
     @follow = Follow.new
-    @follow.followee_id = params[:id]
-    @follow.follower_id = current_user.id
+    @follow.following_id = params[:id]
+    @follow.followers_id = current_user.id
 
     unless @follow.save
       flash[:errors] = @follow.errors.full_messages

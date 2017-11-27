@@ -6,5 +6,12 @@
       json.username photo.author.username
       json.user_img_url photo.author.img_url
     end
+    json.age time_ago_in_words(photo.created_at)
+      .upcase
+      .split(" ")
+      .drop(1)
+      .join(" ") + " AGO"
+    json.likes photo.likes.count
+    json.likers photo.likes.map(& :user_id)
   end
 end
