@@ -8,7 +8,7 @@ class PhotoUpload extends React.Component {
     this.state = {
       img_url: "",
       body: "",
-      author_id: currentUser.id
+      author_id: this.props.currentUser.id
     };
     this.uploadPhoto = this.uploadPhoto.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -26,19 +26,22 @@ class PhotoUpload extends React.Component {
 
     cloudinary.openUploadWidget(window.cloudinary_options, function(error, results){
      if(!error){
-       console.log(results[0]);
        this.state.img_url = results[0].url;
-       console.log(this.state);
+       this.forceUpdate(); // needed to show preview image
      }
     }.bind(this));
-
-    this.forceUpdate();
   }
 
   handleSubmit(e) {
     e.preventDefault();
     const newPhoto = merge({}, this.state);
     this.props.uploadPhoto(newPhoto);
+
+    this.state = {
+      img_url: "",
+      body: "",
+      author_id: this.props.currentUser.id
+    };
   }
 
   render() {
@@ -46,13 +49,9 @@ class PhotoUpload extends React.Component {
       <div className="photo-ul">
 
         <form className='photo-form' onSubmit={this.handleSubmit}>
-          <label htmlFor="upload">
-            <div className='upload-symbol'>&#8682;</div>
-            <input
-              type="file"
-              className="choose-photo"
-              onChange={ this.uploadPhoto } />
-          </label>
+          <input
+            type="file"
+            onClick={ this.uploadPhoto } />
 
           <input
             type="text"
