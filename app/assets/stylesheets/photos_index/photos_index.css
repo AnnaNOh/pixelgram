@@ -24,6 +24,10 @@
   border: 1px solid #e6e6e6;
 }
 
+.photo-item-image {
+  height: 600px;
+}
+
 .photo-top-container {
   display: flex;
   flex-direction: row;

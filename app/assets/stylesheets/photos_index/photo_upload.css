@@ -1,0 +1,18 @@
+.photo-upload-form-modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.photo-upload-form-modal > button {
+  width: 200px;
+  margin: 30px auto 0 auto;
+  padding: 7px;
+
+  border: 1px solid #e6e6e6;
+  border-radius: 1px;
+  text-align: center;
+  background: white;
+
+
+}
