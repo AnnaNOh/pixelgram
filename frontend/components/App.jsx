@@ -14,7 +14,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import GreetingContainer from './greeting/greeting_container';
 import SessionFormContainer from './session/session_form_container';
 import PhotoIndexContainer from './photos/photos_index_container';
-
+import PhotoUpload from './photos/upload/photo_upload_container';
 
 const App = () => (
   <div className="main-body">
@@ -40,6 +40,7 @@ const App = () => (
       <AuthRoute path="/" component={SessionFormContainer} />
     </Switch>
 
+    <ProtectedRoute path="/" component={PhotoUpload} />
     <ProtectedRoute path="/" component={PhotoIndexContainer} />
 
 

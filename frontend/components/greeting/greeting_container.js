@@ -8,7 +8,6 @@ const mapStateToProps = ({ session }) => ({
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  console.log(ownProps);
   const formType = ownProps.location.pathname.slice(1);
 
 

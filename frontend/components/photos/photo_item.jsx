@@ -1,7 +1,6 @@
 import React from 'react';
 
 const PhotoItem = ({photo}) => {
-  console.log(photo);
   return(
     <div>
       <li className= "photo-item">

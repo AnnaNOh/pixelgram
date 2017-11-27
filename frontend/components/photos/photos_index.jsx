@@ -12,7 +12,6 @@ class PhotoIndex extends React.Component {
   }
 
   render(){
-    console.log(this.props);
     return(
       <div>
 
@@ -24,7 +23,7 @@ class PhotoIndex extends React.Component {
             />
           ))}
         </ul>
-        
+
       </div>
     );
   }

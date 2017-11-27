@@ -21,9 +21,10 @@ class Api::PhotosController < ApplicationController
 
   def show
     @photo = find_by(params[:id])
+    render :show
   end
 
-# change this to select relevant photos later
+
   def index
     @user = current_user
     @photos = []
