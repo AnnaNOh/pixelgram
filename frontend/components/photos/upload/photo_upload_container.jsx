@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
-import PhotoUpload from './photo_upload';
+
 import { uploadPhoto } from '../../../actions/photos';
+import PhotoUpload from './photo_upload';
 
 const mapStateToProps = ({errors, session}) => {
   return {

@@ -16,6 +16,7 @@ import SessionFormContainer from './session/session_form_container';
 import PhotoIndexContainer from './photos/photos_index_container';
 import PhotoUpload from './photos/upload/photo_upload_container';
 
+
 const App = () => (
   <div className="main-body">
 
@@ -42,7 +43,6 @@ const App = () => (
 
     <ProtectedRoute path="/" component={PhotoUpload} />
     <ProtectedRoute path="/" component={PhotoIndexContainer} />
-
 
   </div>
 );

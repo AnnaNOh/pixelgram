@@ -19,6 +19,10 @@ export const fetchPhotos = () => dispatch => {
   return APIUtil.getPhotos().then(photos => dispatch(receivePhotos(photos)));
 };
 
+export const fetchPhoto = id => dispatch => {
+  return APIUtil.getPhoto(id).then(photo => dispatch(receiveSinglePhoto(photo)));
+};
+
 export const uploadPhoto = (photo) => dispatch => {
-  return APIUtil.createPhoto(photo).then(photo=> dispatch(receiveSinglePhoto(photo)));
+  return APIUtil.createPhoto(photo).then(photo => dispatch(receiveSinglePhoto(photo)));
 };
