@@ -15,7 +15,7 @@ import GreetingContainer from './greeting/greeting_container';
 import SessionFormContainer from './session/session_form_container';
 import PhotoIndexContainer from './photos/photos_index_container';
 import PhotoUpload from './photos/upload/photo_upload_container';
-
+import ProfileContainer from './photos/profile/profile_container';
 
 const App = () => (
   <div className="main-body">
@@ -30,6 +30,7 @@ const App = () => (
         </Link>
       </div>
       <div className="nav-right">
+        <ProtectedRoute path="/" component={PhotoUpload} />
         <Route path="/" component={GreetingContainer} />
       </div>
     </div>
@@ -41,8 +42,10 @@ const App = () => (
       <AuthRoute path="/" component={SessionFormContainer} />
     </Switch>
 
-    <ProtectedRoute path="/" component={PhotoUpload} />
-    <ProtectedRoute path="/" component={PhotoIndexContainer} />
+    <Switch>
+      <ProtectedRoute path="/user" component={ProfileContainer} />
+      <ProtectedRoute path="/" component={PhotoIndexContainer} />
+    </Switch>
 
   </div>
 );

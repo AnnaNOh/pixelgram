@@ -35,3 +35,7 @@ export const addLike = photo_id => dispatch => {
 export const deleteLike = photo_id => dispatch => {
   return APIUtil.deleteLike(photo_id).then(photo => dispatch(receiveSinglePhoto(photo)));
 };
+
+export const getProfilePhotos = username => dispatch => {
+  return APIUtil.getProfilePhotos(username).then(photos => dispatch(receivePhotos(photos)));
+};

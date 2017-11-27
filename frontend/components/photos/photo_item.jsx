@@ -29,7 +29,9 @@ class PhotoItem extends React.Component {
       <div>
         <li className= "photo-item">
           <div className="photo-top-container">
-            <h3>{photo.author.user_img_url}</h3>
+            <Link to={`/user/${photo.author.username}`}>
+              <h3>{photo.author.user_img_url}</h3>
+            </Link>
             <h3>{photo.author.username}</h3>
           </div>
 

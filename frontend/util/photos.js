@@ -34,3 +34,11 @@ export const deleteLike = photo_id => {
     url: `api/likes/${photo_id}`
   });
 };
+
+export const getProfilePhotos = username => {
+  return $.ajax({
+    method: "GET",
+    url: `/profiles/${username}`,
+    data: {username}
+  });
+};
