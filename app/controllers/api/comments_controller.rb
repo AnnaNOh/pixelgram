@@ -1,7 +1,8 @@
 class Api::CommentsController < ApplicationController
   def create
     @user = current_user
-    @comment = Comment.new(comment_params)
+    @comment = Comment.new
+    @comment.body = params[:body]
     @comment.writer_id = @user.id
     @comment.photo_id = params[:photo_id]
 
@@ -53,10 +54,5 @@ class Api::CommentsController < ApplicationController
     end
   end
 
-  private
-
-  def comment_params
-    params.require(:comment).permit(:body, :writer_id, :photo_id)
-  end
 
 end

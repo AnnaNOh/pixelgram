@@ -43,3 +43,7 @@ export const getProfilePhotos = username => dispatch => {
 export const getComments = photo_id => dispatch => {
   return APIUtil.getComments(photo_id).then(photo => dispatch(receiveSinglePhoto(photo)));
 };
+
+export const createComment = (photo_id, body) => dispatch => {
+  return APIUtil.createComment(photo_id, body).then(photo => dispatch(receiveSinglePhoto(photo)));
+};

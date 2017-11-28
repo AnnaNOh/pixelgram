@@ -51,11 +51,11 @@ export const getComments = photo_id => {
   });
 };
 
-export const createComment = comment => {
+export const createComment = (photo_id, body) => {
   return $.ajax({
     method: "POST",
     url: 'api/comments',
-    data: {comment}
+    data: {photo_id, body}
   });
 };
 
