@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import PhotoIndex from './photos_index';
-import { fetchPhotos } from '../../actions/photos';
+import { fetchPhotos, createComment, deleteComment } from '../../actions/photos';
 
 
 const mapStateToProps = state => ({
@@ -10,7 +10,9 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchPhotos: () => dispatch(fetchPhotos())
+  fetchPhotos: () => dispatch(fetchPhotos()),
+  createComment: (photo_id, body) => dispatch(createComment(photo_id, body)),
+  deleteComment: (id) => dispatch(deleteComment(id))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PhotoIndex);

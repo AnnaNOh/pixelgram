@@ -32,7 +32,7 @@ class Api::CommentsController < ApplicationController
   end
 
   def destroy
-    @comment = find_by(params[:id])
+    @comment = Comment.find_by_id(params[:id])
     if @comment
       @photo = @comment.photo
       @comment.destroy

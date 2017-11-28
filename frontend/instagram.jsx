@@ -3,7 +3,9 @@ import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from "./store/store";
 import { login, signup, logout } from "./actions/session_actions";
-import { fetchPhotos, addLike, deleteLike, getProfilePhotos, getComments, createComment} from "./actions/photos";
+import { fetchPhotos, addLike, deleteLike, getProfilePhotos, getComments,
+  createComment, deleteComment} from "./actions/photos";
+
 
 document.addEventListener("DOMContentLoaded", ()=> {
 
@@ -28,6 +30,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
   window.getProfilePhotos = username => dispatch(getProfilePhotos(username));
   window.getComments = photoId => dispatch(getComments(photoId));
   window.createComment = (photo_id, body) => dispatch(createComment(photo_id, body));
+  window.deleteComment = (id) => dispatch(deleteComment(id));
 
 
   ReactDOM.render(<Root store={store}/>, root);

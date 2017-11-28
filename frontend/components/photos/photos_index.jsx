@@ -20,6 +20,8 @@ class PhotoIndex extends React.Component {
             <PhotoItem
               key={photo.id}
               photo={photo}
+              createComment={this.props.createComment}
+              deleteComment={this.props.deleteComment}
             />
           ))}
         </ul>
