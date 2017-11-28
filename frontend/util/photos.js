@@ -42,3 +42,26 @@ export const getProfilePhotos = username => {
     data: {username}
   });
 };
+
+export const getComments = photo_id => {
+  return $.ajax({
+    method: "GET",
+    url: '/api/comments',
+    data: {photo_id}
+  });
+};
+
+export const createComment = comment => {
+  return $.ajax({
+    method: "POST",
+    url: 'api/comments',
+    data: {comment}
+  });
+};
+
+export const deleteComment = commentId => {
+  return $.ajax({
+    method: "DELETE",
+    url: `/api/comments/${commentId}`
+  });
+};

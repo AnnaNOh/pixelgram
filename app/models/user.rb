@@ -30,6 +30,10 @@ class User < ApplicationRecord
 
   has_many :likes
 
+  has_many :comments,
+    primary_key: :id,
+    foreign_key: :writer_id,
+    class_name: :Comment
 
   attr_reader :password
   after_initialize :ensure_session_token, :ensure_img_url

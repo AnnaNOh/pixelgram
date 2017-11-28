@@ -8,8 +8,10 @@ Rails.application.routes.draw do
     end
 
     resource :session, only: [:create, :destroy, :show]
-    resources :photos, only: [:index, :show, :create, :update, :destroy]
+    resources :photos, only: [:index, :show, :create, :update, :destroy] do
+    end
     resources :likes, only: [:create, :destroy]
+    resources :comments, only: [:create, :destroy, :show, :index, :update ]
   end
 
   resources :profiles, :defaults => {:format => 'json'}
