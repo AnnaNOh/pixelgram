@@ -12,8 +12,9 @@ Rails.application.routes.draw do
     end
     resources :likes, only: [:create, :destroy]
     resources :comments, only: [:create, :destroy, :show, :index, :update ]
+    resources :follows, only: [:create, :destroy]
   end
 
   resources :profiles, :defaults => {:format => 'json'}
-
+  resources :users, :defauklts => {:format => 'json'}
 end

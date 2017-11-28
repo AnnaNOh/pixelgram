@@ -5,7 +5,7 @@ import configureStore from "./store/store";
 import { login, signup, logout } from "./actions/session_actions";
 import { fetchPhotos, addLike, deleteLike, getProfilePhotos, getComments,
   createComment, deleteComment, getAllPhotos} from "./actions/photos";
-
+import { getUser, addFollow, deleteFollow } from "./actions/users";
 
 document.addEventListener("DOMContentLoaded", ()=> {
 
@@ -32,6 +32,9 @@ document.addEventListener("DOMContentLoaded", ()=> {
   window.createComment = (photo_id, body) => dispatch(createComment(photo_id, body));
   window.deleteComment = (id) => dispatch(deleteComment(id));
   window.getAllPhotos = ()=> dispatch(getAllPhotos());
+  window.getUser = username => dispatch(getUser(username));
+  window.addFollow = user_id => dispatch(addFollow(user_id));
+  window.deleteFollow = user_id => dispatch(deleteFollow(user_id));
 
   ReactDOM.render(<Root store={store}/>, root);
 });
