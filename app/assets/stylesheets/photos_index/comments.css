@@ -1,0 +1,77 @@
+h3, h4, h5 {
+  font-size: 14px;
+  color: #262626;
+  margin: 2px 0;
+}
+
+h3 {
+  font-weight: 650;
+}
+
+h5 {
+  font-size: 11px;
+  color: #999;
+}
+
+.photo-bottom-comments-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.photo-author-body {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.photo-author-body > * {
+  padding-right: 5px;
+
+}
+
+.photo-author-body > h4 {
+  font-weight: 400;
+}
+
+
+
+.comment-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /*border: 1px solid black;*/
+}
+
+.photo-comments-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.comment-item > * > * {
+  padding-right: 5px;
+}
+
+.comment-item > h4 {
+  font-weight: 400;
+}
+
+.comment-delete-button {
+  font-size: 20px;
+  color: #999;
+}
+
+.photo-comments > h5 {
+  margin-bottom: 10px;
+}
+
+.create-comment-form {
+  font-size: 14px;
+  margin: 0 10px;
+  padding: 15px 0px;
+  border-top: 1px solid #efefef;
+}
+
+.new-comment-body {
+
+}

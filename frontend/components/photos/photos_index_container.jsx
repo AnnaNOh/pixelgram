@@ -6,7 +6,8 @@ import { fetchPhotos, createComment, deleteComment } from '../../actions/photos'
 
 
 const mapStateToProps = state => ({
-  photos: Object.values(state.entities.photos)
+  photos: Object.values(state.entities.photos),
+  currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({

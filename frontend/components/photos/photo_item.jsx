@@ -17,6 +17,7 @@ class PhotoItem extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
+    this.deleteButton = this.deleteButton.bind(this);
   }
 
   openModal(){
@@ -37,6 +38,22 @@ class PhotoItem extends React.Component {
     e.preventDefault();
     const newComments = merge({}, this.state);
     this.props.createComment(this.props.photo.id, this.state.body);
+    this.setState({
+      modalIsOpen: false,
+      body: "",
+      error: ""
+    });
+  }
+
+  deleteButton(comment){
+    console.log(this.props);
+    if (comment.writer === this.props.currentUser.username){
+      return (
+        <button className="comment-delete-button" onClick={()=> this.props.deleteComment(comment.id)}>
+          ×
+        </button>
+      );
+    }
   }
 
   render() {
@@ -73,34 +90,43 @@ class PhotoItem extends React.Component {
                   <h3>{photo.author.username}</h3>
                   <h4>{photo.body}</h4>
                 </div>
+
                 <div className="photo-comments">
                   {photo.comments.map(comment => (
                     <div
                       key={comment.id}
                       className="comment-item"
                       >
-
-                      <h4>{comment.writer}</h4>
-                      <h4>{comment.body}</h4>
-                      <button onClick={()=> this.props.deleteComment(comment.id)}>
-                        Delete
-                      </button>
+                      <div className="photo-comments-left">
+                        <h3>{comment.writer}</h3>
+                        <h4>{comment.body}</h4>
+                      </div>
+                      <div className="photo-comments-right">
+                        {this.deleteButton(comment)}
+                      </div>
                     </div>
                   ))}
+                  <h5>{photo.age}</h5>
+
                   <form className="create-comment-form" onSubmit={this.handleSubmit}>
                     <input
                       type="text"
                       className="new-comment-body"
                       value={this.state.body}
-                      placeholder="Add a comment"
+                      placeholder="Add a comment..."
                       onChange={this.update("body")}
                     />
+                  <button
+                    className="post-comment-button"
+                    onClick={this.handleSubmit}>
+                    Post
+                  </button>
+
                   </form>
 
 
                 </div>
               </div>
-              <h5>{photo.age}</h5>
             </div>
           </div>
 

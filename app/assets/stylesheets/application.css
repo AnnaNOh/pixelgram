@@ -20,3 +20,6 @@
 @import 'reset/header.css';
 @import 'login/login.css';
 @import 'photos_index/photos_index.css';
+@import 'photos_index/photos_show.css';
+@import 'photos_index/photos_upload.css';
+@import 'photos_index/comments.css';

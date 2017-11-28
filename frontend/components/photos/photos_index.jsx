@@ -22,6 +22,7 @@ class PhotoIndex extends React.Component {
               photo={photo}
               createComment={this.props.createComment}
               deleteComment={this.props.deleteComment}
+              currentUser={this.props.currentUser}
             />
           ))}
         </ul>

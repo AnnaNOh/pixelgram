@@ -13,10 +13,14 @@ html, body, main {
 }
 
 
+.main {
+  height: 100vh;
+  background-attachment: fixed;
+}
+
 .main-body {
-  height: 100%;
-  position: relative;
   background: #fafafa;
+  background-attachment: fixed;
 }
 
 .nav-container {
