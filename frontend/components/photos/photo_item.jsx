@@ -42,7 +42,7 @@ class PhotoItem extends React.Component {
   render() {
 
     let photo = this.props.photo;
-    console.log('this is the photo info',photo);
+
     return(
       <div>
         <li className= "photo-item">
@@ -75,7 +75,10 @@ class PhotoItem extends React.Component {
                 </div>
                 <div className="photo-comments">
                   {photo.comments.map(comment => (
-                    <div className="comment-item">
+                    <div
+                      key={comment.id}
+                      className="comment-item"
+                      >
 
                       <h4>{comment.writer}</h4>
                       <h4>{comment.body}</h4>
