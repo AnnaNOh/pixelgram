@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Modal from 'react-modal';
-import LikeContainer from '../likes/like_container';
+import LikeContainer from '../../likes/like_container';
 import merge from 'lodash/merge';
 
-class PhotoItem extends React.Component {
+
+
+class ExploreItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -62,72 +64,12 @@ class PhotoItem extends React.Component {
     return(
       <div>
         <li className= "photo-item">
-          <div className="photo-top-container">
-            <Link to={`/user/${photo.author.username}`}>
-              <h3>{photo.author.user_img_url}</h3>
-            </Link>
-            <h3>{photo.author.username}</h3>
-          </div>
 
           <img
             className="photo-item-image"
             onClick={this.openModal}
             src={photo.img_url}
             alt={photo.body} />
-
-          <div className="photo-bottom-container">
-            <div className="photo-bottom-icon-bar">
-              <LikeContainer
-                photo={photo}
-                photo_id={photo.id} />
-            </div>
-
-            <div className="photo-bottom-items">
-              <h3>{photo.likes} likes</h3>
-              <div className="photo-bottom-comments-section">
-                <div className="photo-author-body">
-                  <h3>{photo.author.username}</h3>
-                  <h4>{photo.body}</h4>
-                </div>
-
-                <div className="photo-comments">
-                  {photo.comments.map(comment => (
-                    <div
-                      key={comment.id}
-                      className="comment-item"
-                      >
-                      <div className="photo-comments-left">
-                        <h3>{comment.writer}</h3>
-                        <h4>{comment.body}</h4>
-                      </div>
-                      <div className="photo-comments-right">
-                        {this.deleteButton(comment)}
-                      </div>
-                    </div>
-                  ))}
-                  <h5>{photo.age}</h5>
-
-                  <form className="create-comment-form" onSubmit={this.handleSubmit}>
-                    <input
-                      type="text"
-                      className="new-comment-body"
-                      value={this.state.body}
-                      placeholder="Add a comment..."
-                      onChange={this.update("body")}
-                    />
-                  <button
-                    className="post-comment-button"
-                    onClick={this.handleSubmit}>
-                    Post
-                  </button>
-
-                  </form>
-
-
-                </div>
-              </div>
-            </div>
-          </div>
 
           <Modal
             className="photo-show-modal"
@@ -143,12 +85,57 @@ class PhotoItem extends React.Component {
                   <h4>{photo.author.user_img_url}</h4>
                   <h3>{photo.author.username}</h3>
                 </div>
+
+
                 <div className="photo-show-comment-body">
                   <div className="photo-show-body">
                     <h4>{photo.author.username}</h4>
                     <h4>{photo.body}</h4>
                   </div>
+
+                  <div className="photo-comments">
+                    {photo.comments.map(comment => (
+                      <div
+                        key={comment.id}
+                        className="comment-item"
+                        >
+                        <div className="photo-comments-left">
+                          <h3>{comment.writer}</h3>
+                          <h4>{comment.body}</h4>
+                        </div>
+                        <div className="photo-comments-right">
+                          {this.deleteButton(comment)}
+                        </div>
+                      </div>
+                    ))}
+                    <h5>{photo.age}</h5>
+
+                    <form className="create-comment-form" onSubmit={this.handleSubmit}>
+                      <input
+                        type="text"
+                        className="new-comment-body"
+                        value={this.state.body}
+                        placeholder="Add a comment..."
+                        onChange={this.update("body")}
+                      />
+                    <button
+                      className="post-comment-button"
+                      onClick={this.handleSubmit}>
+                      Post
+                    </button>
+
+                    </form>
+
+
+                  </div>
                 </div>
+
+                <div className="photo-bottom-icon-bar">
+                  <LikeContainer
+                    photo={photo}
+                    photo_id={photo.id} />
+                </div>
+
               </div>
               <button className="close-button"
                 onClick={ this.closeModal }>×</button>
@@ -161,4 +148,4 @@ class PhotoItem extends React.Component {
   }
 }
 
-export default PhotoItem;
+export default ExploreItem;

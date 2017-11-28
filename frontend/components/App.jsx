@@ -16,6 +16,7 @@ import SessionFormContainer from './session/session_form_container';
 import PhotoIndexContainer from './photos/photos_index_container';
 import PhotoUpload from './photos/upload/photo_upload_container';
 import ProfileContainer from './photos/profile/profile_container';
+import ExploreContainer from './photos/explore/explore_container';
 
 const App = () => (
   <div className="main-body">
@@ -43,6 +44,7 @@ const App = () => (
     </Switch>
 
     <Switch>
+      <ProtectedRoute exact path="/explore" component={ExploreContainer} />
       <ProtectedRoute path="/user" component={ProfileContainer} />
       <ProtectedRoute path="/" component={PhotoIndexContainer} />
     </Switch>

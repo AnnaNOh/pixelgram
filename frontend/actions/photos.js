@@ -51,3 +51,7 @@ export const createComment = (photo_id, body) => dispatch => {
 export const deleteComment = (id) => dispatch => {
   return APIUtil.deleteComment(id).then(photo => dispatch(receiveSinglePhoto(photo)));
 };
+
+export const getAllPhotos = () => dispatch => {
+  return APIUtil.getAllPhotos().then(photos => dispatch(receivePhotos(photos)));
+};

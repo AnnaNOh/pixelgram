@@ -22,6 +22,7 @@ class Greeting extends React.Component {
     }
   }
 
+  // <Link to={'/explore'}>Explore</Link>
 
   personalGreeting(){
     let currentUser = this.props.currentUser;
@@ -29,6 +30,9 @@ class Greeting extends React.Component {
       return(
         <div className="header-group">
           <h2 className="header-name">Welcome, {currentUser.username}!</h2>
+          <button onClick={()=> this.props.history.push('/explore')}>
+            Explore
+          </button>
 
           <button className="header-button" onClick={this.props.logout}>
             Log out
@@ -42,6 +46,7 @@ class Greeting extends React.Component {
   }
 
   render(){
+    console.log(this.props);
     return(
       <div>
         {this.personalGreeting()}

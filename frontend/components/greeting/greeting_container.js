@@ -10,7 +10,6 @@ const mapStateToProps = ({ session }) => ({
 const mapDispatchToProps = (dispatch, ownProps) => {
   const formType = ownProps.location.pathname.slice(1);
 
-
   return{
     formType,
     logout: () => dispatch( logout() ).then(()=>history.push('/login'))

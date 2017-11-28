@@ -17,4 +17,9 @@ class Api::FollowsController < ApplicationController
     redirect_to user_url(@follow.following_id)
   end
 
+  def show
+    @user = User.find_by_username(params[:username])
+
+  end
+
 end

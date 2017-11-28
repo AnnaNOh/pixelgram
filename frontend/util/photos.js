@@ -65,3 +65,10 @@ export const deleteComment = commentId => {
     url: `/api/comments/${commentId}`
   });
 };
+
+export const getAllPhotos = () => {
+  return $.ajax({
+    method: "GET",
+    url: "/profiles"
+  });
+};
