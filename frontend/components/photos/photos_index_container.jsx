@@ -1,8 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 import PhotoIndex from './photos_index';
-import { fetchPhotos, createComment, deleteComment } from '../../actions/photos';
+import { fetchPhotos, fetchPhoto, createComment, deleteComment } from '../../actions/photos';
 import { getUser, addFollow, deleteFollow } from '../../actions/users';
 
 const mapStateToProps = state => ({
@@ -13,6 +14,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   fetchPhotos: () => dispatch(fetchPhotos()),
+  fetchPhoto: () => dispatch(fetchPhoto()),
   createComment: (photo_id, body) => dispatch(createComment(photo_id, body)),
   deleteComment: (id) => dispatch(deleteComment(id)),
   getUser: username => dispatch(getUser(username)),
@@ -20,4 +22,4 @@ const mapDispatchToProps = dispatch => ({
   deleteFollow: id => dispatch(deleteFollow(id))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(PhotoIndex);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PhotoIndex));

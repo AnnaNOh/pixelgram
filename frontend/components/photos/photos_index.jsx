@@ -13,6 +13,7 @@ class PhotoIndex extends React.Component {
 
   render(){
     let currentUser = this.props.currentUser;
+    console.log(this.props);
     return(
       <div>
 
@@ -29,6 +30,7 @@ class PhotoIndex extends React.Component {
               getUser={this.props.getUser}
               addFollow={this.props.addFollow}
               deleteFollow={this.props.deleteFollow}
+              fetchPhoto={this.props.fetchPhoto}
             />
           ))}
         </ul>

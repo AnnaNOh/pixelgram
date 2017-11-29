@@ -22,10 +22,6 @@ class Api::CommentsController < ApplicationController
 
   def index
     @photo = Photo.find_by_id(params[:photo_id])
-    p params[:photo_id]
-    p "Photo is here"
-    puts (@photo)
-    p "Above here!!!!!!!"
     @comments = []
     @comments.concat(@photo.comments)
     render 'api/photos/show'

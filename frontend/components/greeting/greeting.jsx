@@ -22,8 +22,6 @@ class Greeting extends React.Component {
     }
   }
 
-  // <Link to={'/explore'}>Explore</Link>
-
   personalGreeting(){
     let currentUser = this.props.currentUser;
     if (currentUser){
@@ -31,13 +29,13 @@ class Greeting extends React.Component {
         <div className="header-group">
 
           <button onClick={()=> this.props.history.push('/explore')}>
-            <i class="fa fa-compass" aria-hidden="true"></i>
+            <i className="fa fa-compass" aria-hidden="true"></i>
           </button>
           <button>
-            <i class="fa fa-heart-o" aria-hidden="true"></i>
+            <i className="fa fa-heart-o" aria-hidden="true"></i>
           </button>
           <button onClick={()=> this.props.history.push(`/user/${currentUser.username}`)}>
-            <i class="fa fa-user" aria-hidden="true"></i>
+            <i className="fa fa-user" aria-hidden="true"></i>
           </button>
           <button className="header-button" onClick={this.props.logout}>
             Log out
@@ -51,7 +49,6 @@ class Greeting extends React.Component {
   }
 
   render(){
-    console.log(this.props);
     return(
       <div>
         {this.personalGreeting()}

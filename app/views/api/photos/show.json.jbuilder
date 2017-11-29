@@ -9,5 +9,10 @@
   json.likes @photo.likes.count
   json.liked @photo.likes.any?{ |like| like.user_id == current_user.id }
 
-  json.comments @photo.comments
+  json.comments @photo.comments.each do |comment|
+    json.id comment.id
+    json.body comment.body
+    json.writer comment.writer.username
+  end
+
   json.comments_count @photo.comments.count

@@ -1,4 +1,4 @@
-h3, h4, h5 {
+/*h3, h4, h5 {
   font-size: 14px;
   color: #262626;
   margin: 2px 0;
@@ -11,7 +11,7 @@ h3 {
 h5 {
   font-size: 11px;
   color: #999;
-}
+}*/
 
 .photo-bottom-comments-section {
   display: flex;

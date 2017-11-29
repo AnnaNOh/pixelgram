@@ -1,0 +1,51 @@
+
+.user-profile-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  width: 800px;
+  margin: 20px auto 0 auto;
+  padding: 20px;
+}
+
+.user-img {
+  width: 152px;
+  height: 152px;
+
+  margin-right: 100px;
+}
+
+.user-profile-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-profile-right-top {
+  display: flex;
+  flex-direction: row;
+  font-size: 32px;
+}
+
+.user-profile-right-top > h3 {
+  font-size: 32px;
+}
+
+
+.user-profile-right-top > button {
+  padding: 0 24px;
+
+  font-size: 14px;
+  border: 1px solid black;
+  border-radius: 1px;
+}
+
+.user-profile-right-bottom {
+  display: flex;
+  flex-direction: row;
+  font-size: 16px;
+}
+
+.user-profile-right-bottom > * {
+  margin-right: 20px;
+}

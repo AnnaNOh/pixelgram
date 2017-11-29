@@ -41,11 +41,18 @@ class Profile extends React.Component {
             className="user-img"
             src={user.img_url}
           />
-          <h3>{user.username}</h3>
-          {this.followingButton(user)}
-          <h4>{user.photos_count} posts</h4>
-          <h4>{user.followers_count} followers</h4>
-          <h4>{user.follows_count} following</h4>
+        <div className="user-profile-right">
+          <div className="user-profile-right-top">
+            <h3>{user.username}</h3>
+            {this.followingButton(user)}
+          </div>
+          <div className="user-profile-right-bottom">
+            <h4>{user.photos_count} posts</h4>
+            <h4>{user.followers_count} followers</h4>
+            <h4>{user.follows_count} following</h4>        
+          </div>
+        </div>
+
         </div>
 
         <ul className="photos-index-container">

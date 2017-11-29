@@ -11,7 +11,7 @@ class ExploreItem extends React.Component {
     super(props);
     this.state = {
       modalIsOpen: false,
-      
+
       body: "",
       error: ""
     };
@@ -67,20 +67,20 @@ class ExploreItem extends React.Component {
       <div>
         <li className= "photo-item">
 
-          <div>
-            <li className= "photo-item-each">
-              <div className="photo-hover-container">
-                <h3>{photo.likes} likes</h3>
-                <h3>{photo.comments_count} comments</h3>
-              </div>
 
-              <img
-                className="photo-item-image"
-                src={photo.img_url}
-                alt={photo.body}
-                onClick={this.openModal} />
-            </li>
+          <div className= "photo-item-each">
+            <div className="photo-hover-container">
+              <h3>{photo.likes} likes</h3>
+              <h3>{photo.comments_count} comments</h3>
+            </div>
+
+            <img
+              className="photo-item-image"
+              src={photo.img_url}
+              alt={photo.body}
+              onClick={this.openModal} />
           </div>
+
 
           <Modal
             className="photo-show-modal"
@@ -98,7 +98,7 @@ class ExploreItem extends React.Component {
                   <img
                     className="photo-author-img"
                     onClick={()=> this.props.history.push(`/user/${photo.author.username}`)}
-                    src={photo.author.img_url}
+                    src={photo.author.user_img_url}
                     alt={photo.author.username} />
                   <Link to={`/user/${photo.author.username}`}>
                     <h3>{photo.author.username}</h3>
@@ -129,7 +129,7 @@ class ExploreItem extends React.Component {
                       <LikeContainer
                         photo={photo}
                         photo_id={photo.id} />
-                      <i class="fa fa-comment-o" aria-hidden="true"></i>
+                      <i className="fa fa-comment-o" aria-hidden="true"></i>
                     </div>
                     <h3>{photo.likes} likes</h3>
                     <h5>{photo.age}</h5>
