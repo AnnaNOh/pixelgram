@@ -20,6 +20,12 @@ class PhotoItem extends React.Component {
     this.deleteButton = this.deleteButton.bind(this);
   }
 
+  componentWillMount(){
+    if (this.props.photo){
+      this.props.getUser(this.props.photo.author.username);
+    }
+  }
+
   openModal(){
     this.setState({modalIsOpen: true});
   }
@@ -55,18 +61,39 @@ class PhotoItem extends React.Component {
     }
   }
 
-  render() {
+  followingButton(user){
+    if (user.following){
+      return (
+        <button className="already-following-button" onClick={()=> this.props.deleteFollow(user.id)}>
+          Following
+        </button>
+      );
+    }
+    else {
+      return (
+        <button className="notyet-following-button" onClick={()=> this.props.addFollow(user.id)}>
+          Follow
+        </button>
+      );
+    }
+  }
 
+  render() {
+    console.log(this.props.photo);
     let photo = this.props.photo;
 
     return(
       <div>
         <li className= "photo-item">
           <div className="photo-top-container">
+              <img
+                className="photo-author-img"
+                onClick={()=> this.props.history.push(`/user/${photo.author.username}`)}
+                src={photo.author.img_url}
+                alt={photo.author.username} />
             <Link to={`/user/${photo.author.username}`}>
-              <h3>{photo.author.user_img_url}</h3>
+              <h3>{photo.author.username}</h3>
             </Link>
-            <h3>{photo.author.username}</h3>
           </div>
 
           <img
@@ -142,6 +169,7 @@ class PhotoItem extends React.Component {
                 <div className="photo-show-comment-top">
                   <h4>{photo.author.user_img_url}</h4>
                   <h3>{photo.author.username}</h3>
+                  {this.followingButton(this.props.user)}
                 </div>
                 <div className="photo-show-comment-body">
                   <div className="photo-show-body">

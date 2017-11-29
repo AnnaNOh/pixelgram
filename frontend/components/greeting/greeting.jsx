@@ -29,11 +29,16 @@ class Greeting extends React.Component {
     if (currentUser){
       return(
         <div className="header-group">
-          <h2 className="header-name">Welcome, {currentUser.username}!</h2>
-          <button onClick={()=> this.props.history.push('/explore')}>
-            Explore
-          </button>
 
+          <button onClick={()=> this.props.history.push('/explore')}>
+            <i class="fa fa-compass" aria-hidden="true"></i>
+          </button>
+          <button>
+            <i class="fa fa-heart-o" aria-hidden="true"></i>
+          </button>
+          <button onClick={()=> this.props.history.push(`/user/${currentUser.username}`)}>
+            <i class="fa fa-user" aria-hidden="true"></i>
+          </button>
           <button className="header-button" onClick={this.props.logout}>
             Log out
           </button>
