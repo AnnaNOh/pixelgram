@@ -10,4 +10,4 @@
     json.followers @user.followers
     json.followers_count @user.followers.count
 
-    json.following @user.followers.any?{ |follower| follower.followers_id == current_user.id }
+    json.following @user.followers.any?{ |follower| follower.id == current_user.id }
