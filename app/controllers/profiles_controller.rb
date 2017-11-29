@@ -6,7 +6,11 @@ class ProfilesController < ApplicationController
   end
 
   def show
-    @user = User.find_by_username(params[:id])
+
+    puts 'the params are!'
+    puts (params)
+
+    @user = User.find_by_username(params[:username])
     @photos = []
     @photos.concat(@user.photos)
 

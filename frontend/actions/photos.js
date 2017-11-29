@@ -40,18 +40,6 @@ export const getProfilePhotos = username => dispatch => {
   return APIUtil.getProfilePhotos(username).then(photos => dispatch(receivePhotos(photos)));
 };
 
-// export const getComments = photo_id => dispatch => {
-//   return APIUtil.getComments(photo_id).then(photo => dispatch(receiveSinglePhoto(photo)));
-// };
-
-export const createComment = (photo_id, body) => dispatch => {
-  return APIUtil.createComment(photo_id, body).then(photo => dispatch(receiveSinglePhoto(photo)));
-};
-
-export const deleteComment = (id) => dispatch => {
-  return APIUtil.deleteComment(id).then(photo => dispatch(receiveSinglePhoto(photo)));
-};
-
 export const getAllPhotos = () => dispatch => {
   return APIUtil.getAllPhotos().then(photos => dispatch(receivePhotos(photos)));
 };

@@ -13,7 +13,6 @@ class PhotoIndex extends React.Component {
 
   render(){
     let currentUser = this.props.currentUser;
-    console.log(this.props);
     return(
       <div>
 
@@ -24,8 +23,6 @@ class PhotoIndex extends React.Component {
               key={photo.id}
               photo={photo}
               user={this.props.user}
-              createComment={this.props.createComment}
-              deleteComment={this.props.deleteComment}
               currentUser={this.props.currentUser}
               getUser={this.props.getUser}
               addFollow={this.props.addFollow}

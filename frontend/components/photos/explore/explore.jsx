@@ -20,9 +20,11 @@ class Explore extends React.Component {
             <ExploreItem
               key={photo.id}
               photo={photo}
-              createComment={this.props.createComment}
-              deleteComment={this.props.deleteComment}
+              user={this.props.user}
               currentUser={this.props.currentUser}
+              getUser={this.props.getUser}
+              addFollow={this.props.addFollow}
+              deleteFollow={this.props.deleteFollow}
             />
           ))}
         </ul>

@@ -1,10 +1,17 @@
 
+
+
+
+
+
 @photos.each do |photo|
   json.set! photo.id do
     json.extract! photo, :id, :img_url, :body, :author_id
     json.author do
+      json.id photo.author.id
       json.username photo.author.username
       json.user_img_url photo.author.img_url
+      json.followed photo.author.followers.any?{ |follower| follower.id == current_user.id }
     end
     json.age time_ago_in_words(photo.created_at).upcase + " AGO"
     json.likes photo.likes.count

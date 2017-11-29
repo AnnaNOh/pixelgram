@@ -8,7 +8,8 @@ class Api::CommentsController < ApplicationController
 
     if @comment.save!
       @photo = @comment.photo
-      render 'api/photos/show'
+      @comments = @photo.comments
+      render 'api/comments/index'
     else
       render @comment.errors.full_messages, status: 401
     end
@@ -17,14 +18,14 @@ class Api::CommentsController < ApplicationController
   def show
     @comment = find_by(params[:id])
     @photo = @comment.photo
-    render 'api/photos/show'
+    render 'api/comments/index'
   end
 
   def index
     @photo = Photo.find_by_id(params[:photo_id])
     @comments = []
     @comments.concat(@photo.comments)
-    render 'api/photos/show'
+    render 'api/comments/index'
   end
 
   def destroy
@@ -32,7 +33,8 @@ class Api::CommentsController < ApplicationController
     if @comment
       @photo = @comment.photo
       @comment.destroy
-      render 'api/photos/show'
+      @comments = @photo.comments
+      render 'api/comments/index'
     else
       render json: ["Could not find that comment"], status: 400
     end
@@ -42,7 +44,7 @@ class Api::CommentsController < ApplicationController
     @comment = find_by(params[:id])
     @photo = @comment.photo
     if @comment && @comment.update_attributes(comment_params)
-      render 'api/photos/show'
+      render 'api/comments/index'
     elsif !@comment
       render json: ["Could not find that comment"], status: 400
     else

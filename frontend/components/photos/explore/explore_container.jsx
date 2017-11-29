@@ -13,8 +13,6 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   getAllPhotos: () => dispatch(getAllPhotos()),
-  createComment: (photo_id, body) => dispatch(createComment(photo_id, body)),
-  deleteComment: (id) => dispatch(deleteComment(id)),
   getUser: username => dispatch(getUser(username)),
   addFollow: id => dispatch(addFollow(id)),
   deleteFollow: id => dispatch(deleteFollow(id))
