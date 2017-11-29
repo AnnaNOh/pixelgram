@@ -14,20 +14,15 @@ class ProfileItem extends React.Component {
     return(
       <div>
         <li className= "photo-item">
+          <div className="photo-hover-container">
+            <h3>{photo.likes} likes</h3>
+            <h3>{photo.comments_count} comments</h3>
+          </div>
 
           <img
             className="photo-item-image"
             src={photo.img_url}
             alt={photo.body} />
-
-          <div className="photo-bottom-container">
-            <div className="photo-bottom-items">
-              <h3>{photo.likes} likes</h3>
-
-            </div>
-          </div>
-
-
         </li>
       </div>
     );

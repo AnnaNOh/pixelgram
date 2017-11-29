@@ -17,7 +17,8 @@ class PhotoIndex extends React.Component {
       <div>
 
         <ul className="photos-index-container">
-          {this.props.photos.map(photo => (
+          {this.props.photos.reverse()
+            .map(photo => (
             <PhotoItem
               key={photo.id}
               photo={photo}

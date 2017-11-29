@@ -1,7 +1,7 @@
 
 @photos.each do |photo|
   json.set! photo.id do
-    json.extract! photo, :id, :img_url, :body, :author_id
+    json.extract! photo, :id, :img_url, :body, :author_id, :updated_at
     json.author do
       json.username photo.author.username
       json.user_img_url photo.author.img_url
@@ -15,5 +15,6 @@
       json.body comment.body
       json.writer comment.writer.username
     end
+    json.comments_count photo.comments.count
   end
 end

@@ -11,24 +11,27 @@ class ExploreItem extends React.Component {
     super(props);
     this.state = {
       modalIsOpen: false,
+      
       body: "",
       error: ""
     };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
 
+
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
     this.deleteButton = this.deleteButton.bind(this);
   }
 
+
   openModal(){
     this.setState({modalIsOpen: true});
   }
-
   closeModal(){
     this.setState({modalIsOpen: false});
   }
+
 
   update(field){
     return e => {
@@ -58,47 +61,60 @@ class ExploreItem extends React.Component {
   }
 
   render() {
-
     let photo = this.props.photo;
 
     return(
       <div>
         <li className= "photo-item">
 
-          <img
-            className="photo-item-image"
-            onClick={this.openModal}
-            src={photo.img_url}
-            alt={photo.body} />
+          <div>
+            <li className= "photo-item-each">
+              <div className="photo-hover-container">
+                <h3>{photo.likes} likes</h3>
+                <h3>{photo.comments_count} comments</h3>
+              </div>
+
+              <img
+                className="photo-item-image"
+                src={photo.img_url}
+                alt={photo.body}
+                onClick={this.openModal} />
+            </li>
+          </div>
 
           <Modal
             className="photo-show-modal"
             isOpen={this.state.modalIsOpen}
             onClose={this.closeModal}>
+
             <div className="photo-show-modal-div">
               <img
                 className="photo-show-image"
                 src={photo.img_url}
                 alt={photo.body} />
+
               <div className="photo-show-comment">
                 <div className="photo-show-comment-top">
-                  <h4>{photo.author.user_img_url}</h4>
-                  <h3>{photo.author.username}</h3>
+                  <img
+                    className="photo-author-img"
+                    onClick={()=> this.props.history.push(`/user/${photo.author.username}`)}
+                    src={photo.author.img_url}
+                    alt={photo.author.username} />
+                  <Link to={`/user/${photo.author.username}`}>
+                    <h3>{photo.author.username}</h3>
+                  </Link>
                 </div>
 
 
                 <div className="photo-show-comment-body">
                   <div className="photo-show-body">
-                    <h4>{photo.author.username}</h4>
+                    <h3>{photo.author.username}</h3>
                     <h4>{photo.body}</h4>
                   </div>
 
                   <div className="photo-comments">
                     {photo.comments.map(comment => (
-                      <div
-                        key={comment.id}
-                        className="comment-item"
-                        >
+                      <div className="comment-item" key={comment.id}>
                         <div className="photo-comments-left">
                           <h3>{comment.writer}</h3>
                           <h4>{comment.body}</h4>
@@ -108,6 +124,14 @@ class ExploreItem extends React.Component {
                         </div>
                       </div>
                     ))}
+
+                    <div className="photo-bottom-icon-bar">
+                      <LikeContainer
+                        photo={photo}
+                        photo_id={photo.id} />
+                      <i class="fa fa-comment-o" aria-hidden="true"></i>
+                    </div>
+                    <h3>{photo.likes} likes</h3>
                     <h5>{photo.age}</h5>
 
                     <form className="create-comment-form" onSubmit={this.handleSubmit}>
@@ -118,30 +142,23 @@ class ExploreItem extends React.Component {
                         placeholder="Add a comment..."
                         onChange={this.update("body")}
                       />
-                    <button
-                      className="post-comment-button"
-                      onClick={this.handleSubmit}>
-                      Post
-                    </button>
-
+                      <button
+                        className="post-comment-button"
+                        onClick={this.handleSubmit}>
+                        Post
+                      </button>
                     </form>
-
 
                   </div>
                 </div>
-
-                <div className="photo-bottom-icon-bar">
-                  <LikeContainer
-                    photo={photo}
-                    photo_id={photo.id} />
-                </div>
-
               </div>
-              <button className="close-button"
-                onClick={ this.closeModal }>×</button>
-            </div>
-          </Modal>
 
+              <button className="close-button" onClick={ this.closeModal }>
+                ×
+              </button>
+            </div>
+
+          </Modal>
         </li>
       </div>
     );

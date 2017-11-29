@@ -16,7 +16,7 @@ class Explore extends React.Component {
       <div>
 
         <ul className="photos-index-container">
-          {this.props.photos.map(photo => (
+          {this.props.photos.reverse().map(photo => (
             <ExploreItem
               key={photo.id}
               photo={photo}
