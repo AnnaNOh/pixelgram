@@ -21,6 +21,7 @@ import ExploreContainer from './photos/explore/explore_container';
 const App = () => (
   <div className="main-body">
 
+
     <div className="nav-container">
       <div className="nav-left">
         <Link to="/">
@@ -30,6 +31,7 @@ const App = () => (
           />
         </Link>
       </div>
+
       <div className="nav-right">
         <ProtectedRoute path="/" component={PhotoUpload} />
         <Route path="/" component={GreetingContainer} />
@@ -44,10 +46,11 @@ const App = () => (
     </Switch>
 
     <Switch>
-      <ProtectedRoute exact path="/explore" component={ExploreContainer} />
+      <ProtectedRoute path="/explore" component={ExploreContainer} />
       <ProtectedRoute path="/user" component={ProfileContainer} />
       <ProtectedRoute path="/" component={PhotoIndexContainer} />
     </Switch>
+
 
   </div>
 );

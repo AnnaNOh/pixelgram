@@ -16,5 +16,5 @@ Rails.application.routes.draw do
   end
 
   resources :profiles, :defaults => {:format => 'json'}
-  resources :users, :defauklts => {:format => 'json'}
+  resources :users, :defaults => {:format => 'json'}
 end

@@ -6,17 +6,18 @@ export const getUser = username => {
   });
 };
 
-export const addFollow = user_id => {
+export const addFollow = id => {
   return $.ajax({
     method: "POST",
     url: "api/follows",
-    data: { user_id }
+    data: { id }
   });
 };
 
-export const deleteFollow = user_id => {
+export const deleteFollow = id => {
   return $.ajax({
     method: "DELETE",
-    url: `api/follows/${user_id}`
+    url: `api/follows/${id}`,
+    data: { id }
   });
 };

@@ -2,19 +2,23 @@ class Api::FollowsController < ApplicationController
 
   def create
     @follow = Follow.new
-    @follow.following_id = params[:user_id]
+    @user = User.find_by_id(params[:id])
+
+    @follow.following_id = params[:id]
     @follow.followers_id = current_user.id
+
 
     unless @follow.save
       flash[:errors] = @follow.errors.full_messages
     end
-    redirect_to user_url(params[:id])
+    render 'users/show'
   end
 
   def destroy
-    @follow = Follow.find(params[:user_id])
+    @follow = Follow.find_by(following_id: params[:id], followers_id: current_user.id)
+    @user = User.find_by_id(@follow.followees.id)
     @follow.destroy
-    redirect_to user_url(@follow.following_id)
+    render 'users/show'
   end
 
 
