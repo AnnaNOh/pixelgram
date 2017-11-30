@@ -3,7 +3,7 @@ import * as APIUtil from '../util/photos';
 
 export const RECEIVE_PHOTOS = "RECEIVE_PHOTOS";
 export const RECEIVE_SINGLE_PHOTO = "RECEIVE_SINGLE_PHOTO";
-
+export const CURRENTLY_LOADING = "CURRENTLY_LOADING";
 
 const receivePhotos = photos => ({
   type: RECEIVE_PHOTOS,
@@ -15,6 +15,9 @@ const receiveSinglePhoto = photo => ({
   photo
 });
 
+export const curentlyLoading = () => ({
+  type: CURRENTLY_LOADING
+});
 
 export const fetchPhotos = () => dispatch => {
   return APIUtil.getPhotos().then(photos => dispatch(receivePhotos(photos)));
