@@ -35,8 +35,41 @@
 .photo-age {
   padding: 4px 0;
 }
-
-
+.side-bar-top {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #efefef;
+}
+.current-user-img {
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+}
+.currentuser-username-email{
+  display: flex;
+  flex-direction: column;
+}
+.current-user-email {
+  color: rgb(153, 153, 153);
+  font-weight: 400;
+}
+.footer-links {
+}
+.footer-links > * {
+  color: rgb(153, 153, 153);
+  font-size: 11px;
+  margin-right: 10px;
+}
+.fa-copyright {
+  color: rgb(153, 153, 153);
+  font-size: 11px;
+  margin-right: 5px;
+}
+.copyright {
+  margin-top: 3px;
+}
 
 
 .photo-item {
@@ -98,7 +131,9 @@
   color: gray;
   width: 293px;
 }
-
 .side-bar > * {
   cursor: pointer;
+}
+.current-user-username {
+  margin-bottom: 3px;
 }

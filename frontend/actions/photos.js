@@ -15,19 +15,22 @@ const receiveSinglePhoto = photo => ({
   photo
 });
 
-export const curentlyLoading = () => ({
+export const currentlyLoading = () => ({
   type: CURRENTLY_LOADING
 });
 
 export const fetchPhotos = () => dispatch => {
+  dispatch(currentlyLoading());
   return APIUtil.getPhotos().then(photos => dispatch(receivePhotos(photos)));
 };
 
 export const fetchPhoto = id => dispatch => {
+  dispatch(currentlyLoading());
   return APIUtil.getPhoto(id).then(photo => dispatch(receiveSinglePhoto(photo)));
 };
 
 export const uploadPhoto = (photo) => dispatch => {
+  dispatch(currentlyLoading());
   return APIUtil.createPhoto(photo).then(photo => dispatch(receiveSinglePhoto(photo)));
 };
 
@@ -40,9 +43,11 @@ export const deleteLike = photo_id => dispatch => {
 };
 
 export const getProfilePhotos = username => dispatch => {
+  dispatch(currentlyLoading());
   return APIUtil.getProfilePhotos(username).then(photos => dispatch(receivePhotos(photos)));
 };
 
 export const getAllPhotos = () => dispatch => {
+  dispatch(currentlyLoading());
   return APIUtil.getAllPhotos().then(photos => dispatch(receivePhotos(photos)));
 };

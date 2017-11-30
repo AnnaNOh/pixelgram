@@ -87,7 +87,7 @@ html, body, main {
 .header-group > * {
   margin-right: 20px;
   font-size: 20px;
-  color: rgb(153, 153, 153);
+  color: #262626;
 }
 .header-group > button > img {
   width: 24px;

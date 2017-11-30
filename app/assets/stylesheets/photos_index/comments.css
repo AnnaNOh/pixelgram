@@ -34,7 +34,7 @@ h3, h4 {
 }
 .comments-author-body > h4 {
   width: 450px;
-  text-overflow: ellipsis;
+  overflow-wrap: break-word;
 }
 
 

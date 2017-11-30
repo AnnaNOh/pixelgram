@@ -9,7 +9,8 @@ import { getUser, addFollow, deleteFollow } from '../../actions/users';
 const mapStateToProps = state => ({
   photos: Object.values(state.entities.photos),
   currentUser: state.session.currentUser,
-  user: state.entities.users
+  user: state.entities.users,
+  loading: state.ui.loading
 });
 
 const mapDispatchToProps = dispatch => ({
