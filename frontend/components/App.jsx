@@ -25,17 +25,15 @@ const App = () => (
     <div className="nav-container">
       <div className="nav-left">
         <Link to="/">
+          <img className="nav-bar-instagram-cam-logo" src="https://seeklogo.com/images/I/instagram-logo-A807AD378B-seeklogo.com.png" />
           <img
             className="nav-bar-instagram-logo"
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png"
           />
         </Link>
       </div>
-
-      <div className="nav-right">
-        <ProtectedRoute path="/" component={PhotoUpload} />
-        <Route path="/" component={GreetingContainer} />
-      </div>
+      <ProtectedRoute path="/" component={PhotoUpload} />
+      <Route path="/" component={GreetingContainer} />
     </div>
 
 

@@ -1,5 +1,11 @@
 
 /*Photos Index Page Styling*/
+.photo-index {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 .photo-bottom-icon-bar {
   margin-top: 10px;
   font-size: 25px;
@@ -15,7 +21,7 @@
   justify-content: center;
 
   width: 600px;
-  margin: 3.5% auto;
+  margin-top: 3.5%;
 
   font-size: 12px;
 }
@@ -70,4 +76,9 @@
   width: 30px;
   height: 30px;
   margin-right: 10px;
+}
+
+.side-bar {
+  margin-left: 25px;
+  margin-top: 3.5%;
 }

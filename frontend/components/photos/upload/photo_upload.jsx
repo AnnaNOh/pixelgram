@@ -60,6 +60,7 @@ class PhotoUpload extends React.Component {
     return (
       <div className="photo-upload-form-modal">
         <button onClick={this.openModal}>
+          <i class="fa fa-plus-circle" aria-hidden="true"></i>
           Upload a photo
         </button>
 

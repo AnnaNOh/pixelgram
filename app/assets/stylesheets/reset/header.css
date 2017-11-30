@@ -1,21 +1,11 @@
 
 /*login page css*/
-
 /*Nav Bar Styling*/
 
+/*background: #d10869*/
+
 html, body, main {
-  /*position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;*/
   height: 100%;
-}
-
-
-.main {
-  height: 100vh;
-  background-attachment: fixed;
 }
 
 .main-body {
@@ -24,57 +14,89 @@ html, body, main {
 }
 
 .nav-container {
-  width: 100%;
-  padding: 10px;
-
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
 
+  width: 100%;
+  padding: 10px;
   box-sizing: border-box;
-
-  /*background: #AD234B;*/
-  /*background: #fafafa;*/
   background: white;
   border-bottom: 1px solid #e6e6e6;
 
   color: rgb(153, 153, 153);
   font-weight: bold;
 }
-
 .nav-left {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  margin-left: 200px;
-  padding-left: 10px;
+  margin-right: 150px;
 }
-
-.nav-bar-instagram-logo {
-  width: 110px;
-}
-
-.nav-right {
-  padding-right: 20px;
-  margin-right: 200px;
-}
-
-.header-link {
-  padding-left: 20px;
-}
-
-.header-group {
+.nav-left > * {
   display: flex;
   flex-direction: row;
 }
+.nav-bar-instagram-cam-logo {
+  width: 30px;
+  height: 30px;
+  margin: auto 0;
+  padding-right: 20px;
+  border-right: 1px solid #262626;
+  box-sizing: content-box;
+}
+.nav-bar-instagram-logo {
+  width: 120px;
+  height: 45px;
+  padding-top: 5px;
+  padding-left: 17px;
+  margin: auto 0;
+  box-sizing: content-box;
 
-.header-name {
-  padding: 10px 0;
 }
 
+
+
+.photo-upload-form-modal {
+  display: flex;
+  justify-content: center;
+}
+.photo-upload-form-modal > button {
+  margin: auto 0;
+  padding: 5px 20px;
+  width: 250px;
+
+  border: 1px solid #e6e6e6;
+  border-radius: 2px;
+  background: #fafafa;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 400;
+}
+.photo-upload-form-modal > button > i {
+  margin-right: 10px;
+}
+
+
+
+.header-group {
+  margin: auto 0px;
+  margin-left: 150px;
+  margin-top: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.header-group > * {
+  margin-right: 20px;
+  font-size: 20px;
+  color: rgb(153, 153, 153);
+}
+.header-group > button > img {
+  width: 24px;
+}
 .header-button {
   padding: 10px 0px 10px 15px;
+  margin-right: 0px;
+  font-size: 14px;
+  font-weight: 400;
 }
 
 .login-signup {
