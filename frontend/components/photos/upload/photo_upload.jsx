@@ -66,7 +66,10 @@ class PhotoUpload extends React.Component {
 
         <Modal
           isOpen={this.state.modalIsOpen}
-          onClose={this.closeModal}>
+          onClose={this.closeModal}
+          shouldCloseOnOverlayClick={true}
+          onRequestClose={this.closeModal}
+          >
           <div className="photo-upload">
 
             <form className='photo-upload-form' onSubmit={this.handleSubmit}>

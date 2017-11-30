@@ -119,7 +119,7 @@ class ExploreItem extends React.Component {
               </div>
 
               <button className="close-button" onClick={ this.closeModal }>
-                ×
+                <i className="fa fa-window-close" aria-hidden="true"></i>
               </button>
             </div>
 

@@ -17,7 +17,6 @@ class ProfileItem extends React.Component {
     this.closeModal = this.closeModal.bind(this);
   }
 
-
   openModal(){
     this.setState({modalIsOpen: true});
   }
@@ -29,7 +28,9 @@ class ProfileItem extends React.Component {
   followingButton(author){
     if (author.followed){
       return (
-        <button className="already-following-button" onClick={()=> this.props.deleteFollow(author.id)}>
+        <button
+          className="already-following-button"
+          onClick={ ()=>this.props.deleteFollow(author.id)}>
           Following
         </button>
       );
@@ -45,7 +46,6 @@ class ProfileItem extends React.Component {
 
   render() {
     let photo = this.props.photo;
-    console.log(photo);
     return(
       <div className="profile-item-div">
         <li className= "profile-item">
@@ -111,7 +111,7 @@ class ProfileItem extends React.Component {
             </div>
 
             <button className="close-button" onClick={ this.closeModal }>
-              ×
+              <i className="fa fa-window-close" aria-hidden="true"></i>
             </button>
           </div>
 

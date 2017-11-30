@@ -28,7 +28,7 @@ class Greeting extends React.Component {
       return(
         <div className="header-group">
           <button onClick={()=> this.props.history.push('/explore')}>
-            <i className="fa fa-paper-plane" aria-hidden="true"></i>
+            <i className="fa fa-map" aria-hidden="true"></i>
           </button>
           <button>
             <i className="fa fa-magic" aria-hidden="true"></i>

@@ -8,12 +8,8 @@ class Profile extends React.Component {
   }
 
   componentWillMount(){
-    // if (this.props.location.pathname.slice(6)) {
-      console.log('i got past the thing');
-      console.log(this.props);
       this.props.getProfilePhotos(this.props.location.pathname.slice(6));
       this.props.getUser(this.props.location.pathname.slice(6));
-    // }
   }
 
   followingButton(user){
@@ -65,6 +61,7 @@ class Profile extends React.Component {
               currentUser={this.props.currentUser}
               addFollow={this.props.addFollow}
               deleteFollow={this.props.deleteFollow}
+              getUser={this.props.getUser}
             />
           ))}
         </ul>

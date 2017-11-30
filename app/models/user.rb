@@ -60,7 +60,7 @@ class User < ApplicationRecord
   end
 
   def ensure_img_url
-    self.img_url = "image" unless self.img_url
+    self.img_url = "http://res.cloudinary.com/annaoh/image/upload/c_thumb,h_600,w_600/v1511941067/Shibainu_Maru_te0djc.jpg" unless self.img_url
   end
 
   private

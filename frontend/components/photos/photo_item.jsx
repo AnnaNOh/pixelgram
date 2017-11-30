@@ -103,7 +103,10 @@ class PhotoItem extends React.Component {
           <Modal
             className="photo-show-modal"
             isOpen={this.state.modalIsOpen}
-            onClose={this.closeModal}>
+            onClose={this.closeModal}
+            shouldCloseOnOverlayClick={true}
+            onRequestClose={this.closeModal}
+            >
 
             <div className="photo-show-modal-div">
               <img
@@ -150,7 +153,7 @@ class PhotoItem extends React.Component {
               </div>
 
               <button className="close-button" onClick={ this.closeModal }>
-                ×
+                <i className="fa fa-window-close" aria-hidden="true"></i>
               </button>
             </div>
 
