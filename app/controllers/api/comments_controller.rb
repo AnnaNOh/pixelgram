@@ -31,9 +31,11 @@ class Api::CommentsController < ApplicationController
   def destroy
     @comment = Comment.find_by_id(params[:id])
     if @comment
-      @photo = @comment.photo
-      @comment.destroy
-      @comments = @photo.comments
+      # @photo = @comment.photo
+      @comment.destroy!
+      # @comments = []
+      # @comments.concat(@photo.comments)
+      @comments = Comment.all.reject{|comment| comment.writer == nil }
       render 'api/comments/index'
     else
       render json: ["Could not find that comment"], status: 400

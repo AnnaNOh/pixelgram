@@ -1,5 +1,5 @@
 import {
-  RECEIVE_COMMENTS } from '../actions/comments';
+  RECEIVE_COMMENTS, RECEIVE_AFTER_DELETE} from '../actions/comments';
 import merge from 'lodash/merge';
 
 const commentsReducer = (oldState={}, action) => {
@@ -7,6 +7,8 @@ const commentsReducer = (oldState={}, action) => {
 
   switch (action.type) {
     case RECEIVE_COMMENTS:
+      return merge({}, oldState, action.comments);
+    case RECEIVE_AFTER_DELETE:
       return merge({}, action.comments);
     default:
       return oldState;

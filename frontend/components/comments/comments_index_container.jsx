@@ -5,8 +5,9 @@ import { withRouter } from 'react-router-dom';
 import CommentsIndex from './comments_index';
 import { getComments, createComment, deleteComment } from '../../actions/comments';
 
-const mapStateToProps = state => ({
-  comments: Object.values(state.entities.comments),
+const mapStateToProps = (state, ownProps) => ({
+  comments: Object.values(state.entities.comments).
+  filter(comment => comment.photo_id === ownProps.photo_id),
   currentUser: state.session.currentUser
 });
 
