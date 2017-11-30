@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     @user = User.find_by_username(params[:username])
     render
   end
-  
+
   def index
   end
 

@@ -27,7 +27,7 @@ class CommentsIndex extends React.Component {
       <div>
         <ul className="comments-list">
           {this.props.comments.map(comment => (
-            <li>
+            <li key={comment.id}>
               <h3>{comment.writer}</h3>
               <h4>{comment.body}</h4>
               <div className="photo-comments-right">

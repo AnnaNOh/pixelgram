@@ -17,7 +17,7 @@ class PhotoIndex extends React.Component {
       <div>
 
         <ul className="photos-index-container">
-          {this.props.photos.reverse()
+          {this.props.photos.sort(function(a,b){return(b.id-a.id);})
             .map(photo => (
             <PhotoItem
               key={photo.id}

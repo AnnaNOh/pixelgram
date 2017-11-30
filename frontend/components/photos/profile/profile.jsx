@@ -58,7 +58,7 @@ class Profile extends React.Component {
         </div>
 
         <ul className="photos-index-container">
-          {this.props.photos.reverse().map(photo => (
+          {this.props.photos.sort(function(a,b){return(b.id-a.id);}).map(photo => (
             <ProfileItem
               key={photo.id}
               photo={photo}
