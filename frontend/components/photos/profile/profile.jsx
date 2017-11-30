@@ -57,7 +57,7 @@ class Profile extends React.Component {
 
         </div>
 
-        <ul className="photos-index-container">
+        <ul className="profile-index">
           {this.props.photos.sort(function(a,b){return(b.id-a.id);}).map(photo => (
             <ProfileItem
               key={photo.id}

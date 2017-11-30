@@ -58,7 +58,7 @@ class PhotoItem extends React.Component {
                 src={photo.author.user_img_url}
                 alt={photo.author.username} />
             <Link to={`/user/${photo.author.username}`}>
-              <h3>{photo.author.username}</h3>
+              <h3 className="photo-author">{photo.author.username}</h3>
             </Link>
           </div>
 
@@ -76,7 +76,7 @@ class PhotoItem extends React.Component {
             </div>
 
             <div className="photo-bottom-items">
-              <h3>{photo.likes} likes</h3>
+              <h3 className="likes-counter">{photo.likes} likes</h3>
               <div className="photo-bottom-comments-section">
                 <div className="photo-author-body">
                   <h3>{photo.author.username}</h3>
@@ -88,7 +88,7 @@ class PhotoItem extends React.Component {
                     photo_id={photo.id}
                   />
 
-                  <h5>{photo.age}</h5>
+                <h5 className="photo-age">{photo.age}</h5>
 
                   <CommentsFormContainer
                     photo_id={photo.id}

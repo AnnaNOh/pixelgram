@@ -28,8 +28,10 @@ class CommentsIndex extends React.Component {
         <ul className="comments-list">
           {this.props.comments.map(comment => (
             <li key={comment.id}>
-              <h3>{comment.writer}</h3>
-              <h4>{comment.body}</h4>
+              <div className="comments-author-body">
+                <h3>{comment.writer}</h3>
+                <h4>{comment.body}</h4>
+              </div>
               <div className="photo-comments-right">
                 {this.deleteButton(comment)}
               </div>

@@ -13,6 +13,41 @@ h5 {
   color: #999;
 }*/
 
+h3, h4 {
+  font-size: 14px;
+}
+
+.comments-list > li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.comments-author-body {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin: 4px 0;
+}
+.comments-author-body > h3 {
+  padding-right: 7px;
+  font-weight: 700;
+}
+.comments-author-body > h4 {
+  width: 450px;
+  text-overflow: ellipsis;
+}
+
+
+.new-comment-body {
+  width: 500px;
+}
+
+
+
+
+
+
+
 .photo-bottom-comments-section {
   display: flex;
   flex-direction: column;
@@ -70,8 +105,4 @@ h5 {
   margin: 0 10px;
   padding: 15px 0px;
   border-top: 1px solid #efefef;
-}
-
-.new-comment-body {
-
 }

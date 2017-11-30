@@ -52,17 +52,17 @@ class ExploreItem extends React.Component {
 
     return(
       <div>
-        <li className= "photo-item">
+        <li className= "explore-item">
 
 
-          <div className= "photo-item-each">
-            <div className="photo-hover-container">
+          <div className= "explore-item-div">
+            <div className="explore-photo-hover">
               <h3>{photo.likes} likes</h3>
               <h3>{photo.comments_count} comments</h3>
             </div>
 
             <img
-              className="photo-item-image"
+              className="explore-image"
               src={photo.img_url}
               alt={photo.body}
               onClick={this.openModal} />

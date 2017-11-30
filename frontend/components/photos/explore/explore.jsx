@@ -14,8 +14,8 @@ class Explore extends React.Component {
   render(){
     return(
       <div>
-
-        <ul className="photos-index-container">
+        <h2 className="explore">Explore</h2> 
+        <ul className="explore-index">
           {this.props.photos.sort(function(a,b){return(b.id-a.id);}).map(photo => (
             <ExploreItem
               key={photo.id}

@@ -8,4 +8,23 @@ span, article, footer, time, small,
 ul, img, input, textarea, button {
 
   font-family: 'Open Sans', sans-serif;
+  color: #262626;
+}
+
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+
+}
+
+h3 {
+  font-size: 14px;
+  font-weight: 700;
+
+}
+
+h5 {
+  font-size: 12px;
+  font-weight: 400;
+  color: #999;
 }

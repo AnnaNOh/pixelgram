@@ -1,0 +1,27 @@
+
+
+
+
+
+
+
+
+.profile-index {
+  width: 1023px;
+  margin: 15px auto;
+  display: flex;
+  flex-flow: row wrap;
+}
+.profile-hover {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.profile-image {
+  width: 293px;
+  height: 293px;
+}
+.profile-item{
+  margin: 10px 24px;
+}

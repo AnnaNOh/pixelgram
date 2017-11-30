@@ -47,15 +47,15 @@ class ProfileItem extends React.Component {
     let photo = this.props.photo;
     console.log(photo);
     return(
-      <div>
-        <li className= "photo-item">
-          <div className="photo-hover-container">
+      <div className="profile-item-div">
+        <li className= "profile-item">
+          <div className="profile-hover">
             <h3>{photo.likes} likes</h3>
             <h3>{photo.comments_count} comments</h3>
           </div>
 
           <img
-            className="photo-item-image"
+            className="profile-image"
             onClick={this.openModal}
             src={photo.img_url}
             alt={photo.body} />

@@ -1,0 +1,38 @@
+
+
+
+
+.explore{
+  color: #999;
+  width: 935px;
+  margin: 4% auto 0 auto;
+}
+.explore-index {
+  width: 1023px;
+  margin: 15px auto;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+
+
+
+
+
+
+
+
+.explore-photo-hover{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.explore-item {
+  margin: 10px 24px;
+}
+
+.explore-image {
+  width: 293px;
+  height: 293px;
+  cursor: pointer;
+}

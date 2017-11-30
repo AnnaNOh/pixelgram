@@ -28,13 +28,13 @@ class Greeting extends React.Component {
       return(
         <div className="header-group">
           <button onClick={()=> this.props.history.push('/explore')}>
-            <img src="http://res.cloudinary.com/annaoh/image/upload/v1512004619/navigation-1_qaryvi.png"/>
+            <i className="fa fa-paper-plane" aria-hidden="true"></i>
           </button>
           <button>
-            <img src="http://res.cloudinary.com/annaoh/image/upload/v1512004887/like-1_r1bajz.png" />
+            <i className="fa fa-magic" aria-hidden="true"></i>
           </button>
           <button onClick={()=> this.props.history.push(`/user/${currentUser.username}`)}>
-            <img src="http://res.cloudinary.com/annaoh/image/upload/v1512004980/user-4_zpahxy.png" />
+            <i className="fa fa-user-o" aria-hidden="true"></i>
           </button>
           <button className="header-button" onClick={this.props.logout}>
             Log out
