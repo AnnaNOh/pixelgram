@@ -42,20 +42,22 @@ class PhotoIndex extends React.Component {
           </ul>
 
           <div className="side-bar">
-            <div className="side-bar-top">
-              <img
-                className="current-user-img"
-                onClick={()=> this.props.history.push(`/user/${currentUser.username}`)}
-                src={currentUser.img_url}
-                alt={currentUser.username} />
-              <div className="currentuser-username-email">
-                <button onClick={()=> this.props.history.push(`/user/${currentUser.username}`)}>
-                  <h2 className="current-user-username">{currentUser.username}</h2>
-                </button>
-                <h3 className="current-user-email">{currentUser.email}</h3>
-              </div>
-            </div>
+            <div className="side-bar-fix">
+              <div className="side-bar-top">
+                <img
+                  className="current-user-img"
+                  onClick={()=> this.props.history.push(`/user/${currentUser.username}`)}
+                  src={currentUser.img_url}
+                  alt={currentUser.username} />
+                <div className="currentuser-username-email">
+                  <button onClick={()=> this.props.history.push(`/user/${currentUser.username}`)}>
+                    <h2 className="current-user-username">{currentUser.username}</h2>
+                  </button>
+                  <h3 className="current-user-email">{currentUser.email}</h3>
+                </div>
 
+
+            </div>
             <div className="footer-links">
               <button>About Me</button>
               <button>Support</button>
@@ -71,6 +73,8 @@ class PhotoIndex extends React.Component {
                 2017 INSTAGRAM
               </div>
             </div>
+            </div>
+
           </div>
 
 

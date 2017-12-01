@@ -26,6 +26,9 @@ html, body, main {
 
   color: rgb(153, 153, 153);
   font-weight: bold;
+
+  position: fixed;
+  top: 0;
 }
 .nav-left {
   margin-right: 150px;
