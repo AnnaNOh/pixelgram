@@ -11,12 +11,12 @@ class Like extends React.Component {
     e.preventDefault();
 
     if (this.props.photo.liked) {
-      console.log(this.props.photo.id);
+
       this.props.deleteLike(this.props.photo.id);
     }
     else {
       this.props.addLike(this.props.photo.id);
-      console.log(this.props.photo.id);
+
     }
   }
 

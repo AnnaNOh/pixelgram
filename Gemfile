@@ -43,6 +43,9 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'sdoc', '~> 0.4.0', group: :doc
   gem 'annotate'
+  gem 'pry-rails'
+  gem 'web-console', '~> 2.0'
+  gem 'spring'
 
 end
 

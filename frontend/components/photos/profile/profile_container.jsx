@@ -7,7 +7,6 @@ import { getProfilePhotos } from '../../../actions/photos';
 import { getUser, addFollow, deleteFollow } from '../../../actions/users';
 
 const mapStateToProps = (state) => {
-  console.log(state);
 
   return({
     photos: Object.values(state.entities.photos),

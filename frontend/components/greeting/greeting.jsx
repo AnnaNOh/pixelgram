@@ -23,7 +23,7 @@ class Greeting extends React.Component {
   }
 
   personalGreeting(){
-    console.log(this.props);
+
     let currentUser = this.props.currentUser;
     if (currentUser){
       return(
