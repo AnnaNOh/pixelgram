@@ -30,14 +30,14 @@ class ExploreItem extends React.Component {
   followingButton(user){
     if (user.followed){
       return (
-        <button className="already-following-button" onClick={()=> this.props.deleteFollow(user.id)}>
+        <button className="modal-already-following-button" onClick={()=> this.props.deleteFollow(user.id)}>
           Following
         </button>
       );
     }
     else {
       return (
-        <button className="notyet-following-button" onClick={()=> this.props.addFollow(user.id)}>
+        <button className="modal-notyet-following-button" onClick={()=> this.props.addFollow(user.id)}>
           Follow
         </button>
       );
@@ -73,7 +73,10 @@ class ExploreItem extends React.Component {
           <Modal
             className="photo-show-modal"
             isOpen={this.state.modalIsOpen}
-            onClose={this.closeModal}>
+            onClose={this.closeModal}
+            shouldCloseOnOverlayClick={true}
+            onRequestClose={this.closeModal}
+            >
 
             <div className="photo-show-modal-div">
               <img
@@ -84,17 +87,17 @@ class ExploreItem extends React.Component {
               <div className="photo-show-comment">
                 <div className="photo-show-comment-top">
                   <img
-                    className="photo-author-img"
+                    className="modal-photo-author-img"
                     onClick={()=> this.props.history.push(`/user/${photo.author.username}`)}
                     src={photo.author.user_img_url}
                     alt={photo.author.username} />
                   <Link to={`/user/${photo.author.username}`}>
-                    <h3>{photo.author.username}</h3>
+                    <h3 className="modal-photo-author-name">{photo.author.username}</h3>
                   </Link>
                   {this.followingButton(photo.author)}
                 </div>
 
-                <div className="photo-show-comment-body">
+                <div className="photo-index-show-comment-body">
                   <div className="photo-show-body">
                     <h3>{photo.author.username}</h3>
                     <h4>{photo.body}</h4>
@@ -102,8 +105,9 @@ class ExploreItem extends React.Component {
 
 
                   <div className="photo-comments">
-                    <CommentsIndexContainer photo_id={photo.id} />
+                    <CommentsIndexContainer photo_id={photo.id} classtag="modal"/>
 
+                  <div className="photo-comments-bottom">
                     <div className="photo-bottom-icon-bar">
                       <LikeContainer
                         photo={photo}
@@ -111,10 +115,10 @@ class ExploreItem extends React.Component {
                       <i className="fa fa-comment-o" aria-hidden="true"></i>
                     </div>
                     <h3>{photo.likes} likes</h3>
-                    <h5>{photo.age}</h5>
+                    <h5 className="modal-age">{photo.age}</h5>
 
-                    <CommentsFormContainer photo_id={photo.id} />
-
+                    <CommentsFormContainer photo_id={photo.id} classtag="modal" />
+                    </div>
                   </div>
                 </div>
               </div>

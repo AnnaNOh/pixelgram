@@ -29,7 +29,7 @@ class ProfileItem extends React.Component {
     if (author.followed){
       return (
         <button
-          className="already-following-button"
+          className="modal-already-following-button"
           onClick={ ()=>this.props.deleteFollow(author.id)}>
           Following
         </button>
@@ -37,7 +37,7 @@ class ProfileItem extends React.Component {
     }
     else {
       return (
-        <button className="notyet-following-button" onClick={()=> this.props.addFollow(author.id)}>
+        <button className="modal-notyet-following-button" onClick={()=> this.props.addFollow(author.id)}>
           Follow
         </button>
       );
@@ -108,7 +108,7 @@ class ProfileItem extends React.Component {
                     <i className="fa fa-comment-o" aria-hidden="true"></i>
                   </div>
                   <h3>{photo.likes} likes</h3>
-                  <h5>{photo.age}</h5>
+                  <h5 className="modal-age">{photo.age}</h5>
 
                   <CommentsFormContainer photo_id={photo.id} classtag="modal"/>
                 </div>
