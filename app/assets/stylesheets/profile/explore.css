@@ -7,13 +7,14 @@
 .explore{
   color: #999;
   width: 935px;
-  margin: 4% auto 0 auto;
+  margin-left: 20px;
 }
 .explore-index {
   width: 1023px;
-  margin: 15px auto;
+  margin: 30px auto;
   display: flex;
   flex-flow: row wrap;
+  justify-content: center;
 }
 .explore-image {
   width: 293px;
@@ -21,9 +22,13 @@
   cursor: pointer;
 }
 .explore-item{
-  margin: 10px 24px;
+  margin: 15px 15px;
 }
-
+.explore-index-div{
+  position: relative;
+  top: 100px;
+  /*left: 27px;*/
+}
 
 
 .explore-photo-hover{

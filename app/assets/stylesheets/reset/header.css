@@ -29,6 +29,7 @@ html, body, main {
 
   position: fixed;
   top: 0;
+  z-index: 5;
 }
 .nav-left {
   margin-right: 150px;
@@ -83,6 +84,7 @@ html, body, main {
   margin: auto 0px;
   margin-left: 150px;
   margin-top: 5px;
+  /*margin-right: 120px;*/
   display: flex;
   flex-direction: row;
   align-items: center;

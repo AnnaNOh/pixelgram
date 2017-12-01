@@ -55,8 +55,6 @@ class PhotoIndex extends React.Component {
                   </button>
                   <h3 className="current-user-email">{currentUser.email}</h3>
                 </div>
-
-
             </div>
             <div className="footer-links">
               <button>About Me</button>

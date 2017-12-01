@@ -159,13 +159,12 @@
   color: gray;
   width: 293px;
   position: relative;
-  top: 120px;
   left: 10px;
 
 }
 .side-bar-fix{
   position: fixed;
-  top: 120px;
+  top: 125px;
 
   display: flex;
   flex-direction: column;

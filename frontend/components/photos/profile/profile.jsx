@@ -42,7 +42,7 @@ class Profile extends React.Component {
     }
     else {
     return(
-      <div>
+      <div className="profile-index-div">
         <div className="user-profile-container">
           <img
             className="user-img"
