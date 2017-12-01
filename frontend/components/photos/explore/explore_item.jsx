@@ -54,12 +54,13 @@ class ExploreItem extends React.Component {
       <div>
         <li className= "explore-item">
 
-
           <div className= "explore-item-div">
-            <div className="explore-photo-hover">
-              <h3>{photo.likes} likes</h3>
-              <h3>{photo.comments_count} comments</h3>
-            </div>
+              <div
+                onClick={this.openModal}
+                className="explore-photo-hover">
+                <h3 className="left-heart"><i className="fa fa-heart" aria-hidden="true"></i>  {photo.likes}</h3>
+                <h3><i className="fa fa-comment" aria-hidden="true"></i>  {photo.comments_count}</h3>
+              </div>
 
             <img
               className="explore-image"

@@ -1,21 +1,24 @@
 import React from 'react';
 import PhotoItem from './photo_item';
-import ReactLoading from 'react-loading';
+import Loading from '../greeting/loading';
 
 class PhotoIndex extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      loading: true
+    };
   }
 
   componentDidMount(){
-    this.props.fetchPhotos();
+    this.props.fetchPhotos().then(()=> this.setState({loading: false}));
   }
 
   render(){
     let currentUser = this.props.currentUser;
-    if (this.props.loading) {
+    if (this.state.loading) {
       return(
-        <ReactLoading type="cubes" color="#444" height='600px' width='600px' />
+        <Loading />
       );
     }
     else {

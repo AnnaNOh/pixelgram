@@ -3,6 +3,22 @@ import React from 'react';
 import merge from 'lodash/merge';
 import Modal from 'react-modal';
 
+const customStyles = {
+  overlay : {
+    backgroundColor       : 'rgba(0, 0, 0, 0.75)',
+  },
+  content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)',
+    background            : '#fff',
+
+  }
+};
+
 class PhotoUpload extends React.Component {
   constructor(props) {
     super(props);
@@ -11,7 +27,6 @@ class PhotoUpload extends React.Component {
       img_url: "",
       body: "",
       author_id: this.props.currentUser.id,
-      likes: []
     };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
@@ -54,6 +69,11 @@ class PhotoUpload extends React.Component {
     const newPhoto = merge({}, this.state);
     this.props.uploadPhoto(newPhoto);
     this.closeModal();
+    this.setState({
+      img_url: "",
+      body: "",
+      author_id: this.props.currentUser.id,
+    });
   }
 
   render() {
@@ -69,38 +89,42 @@ class PhotoUpload extends React.Component {
           onClose={this.closeModal}
           shouldCloseOnOverlayClick={true}
           onRequestClose={this.closeModal}
+          style={customStyles}
           >
           <div className="photo-upload">
 
             <form className='photo-upload-form' onSubmit={this.handleSubmit}>
+              <img
+                className="photo-preview"
+                src={ this.state.img_url } />
+
               <input
+                className="photo-file-upload"
                 type="file"
                 onClick={ this.uploadPhoto } />
 
-              <input
-                type="text"
+              <textarea
                 className="photo-body"
                 value={this.state.body}
                 onChange={this.update('body')}
                 placeholder="Add a caption" />
 
-              <button
-                className="upload-button"
-                onClick={this.handleSubmit}>
-                Submit
-              </button>
+              <div className="submit-cancel">
+                <button
+                  className="upload-button"
+                  onClick={this.handleSubmit}>
+                  Submit
+                </button>
 
-              <button
-                className="close-button"
-                onClick={ this.closeModal }>
-                Cancel
-              </button>
+                <button
+                  className="upload-cancel-button"
+                  onClick={ this.closeModal }>
+                  Cancel
+                </button>
+              </div>
 
             </form>
 
-            <img
-              className="photo-preview"
-              src={ this.state.img_url } />
 
           </div>
         </Modal>

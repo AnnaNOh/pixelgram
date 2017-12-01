@@ -1,14 +1,18 @@
 import React from 'react';
 import ProfileItem from './profile_item';
+import Loading from '../../greeting/loading';
 
 
 class Profile extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      loading: true
+    };
   }
 
   componentWillMount(){
-      this.props.getProfilePhotos(this.props.location.pathname.slice(6));
+      this.props.getProfilePhotos(this.props.location.pathname.slice(6)).then(()=> this.setState({loading: false}));
       this.props.getUser(this.props.location.pathname.slice(6));
   }
 
@@ -30,8 +34,13 @@ class Profile extends React.Component {
   }
 
   render(){
-    console.log(this.props);
     const user = this.props.user;
+    if (this.state.loading) {
+      return(
+        <Loading />
+      );
+    }
+    else {
     return(
       <div>
         <div className="user-profile-container">
@@ -41,13 +50,13 @@ class Profile extends React.Component {
           />
         <div className="user-profile-right">
           <div className="user-profile-right-top">
-            <h3>{user.username}</h3>
+            <h3 className="user-profile-username">{user.username}</h3>
             {this.followingButton(user)}
           </div>
           <div className="user-profile-right-bottom">
-            <h4>{user.photos_count} posts</h4>
-            <h4>{user.followers_count} followers</h4>
-            <h4>{user.follows_count} following</h4>
+            <h4><strong>{user.photos_count}</strong> posts</h4>
+            <h4><strong>{user.followers_count}</strong> followers</h4>
+            <h4><strong>{user.follows_count}</strong> following</h4>
           </div>
         </div>
 
@@ -69,6 +78,7 @@ class Profile extends React.Component {
       </div>
     );
   }
+}
 }
 
 export default Profile;

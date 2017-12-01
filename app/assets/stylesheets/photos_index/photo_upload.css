@@ -1,0 +1,54 @@
+
+
+
+.photo-upload {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.photo-upload-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.photo-preview {
+  max-width: 600px;
+  max-height: 600px;
+  background: black;
+  border: none;
+}
+
+.photo-body {
+  min-height: 100px;
+  overflow-wrap: break-word;
+}
+
+.submit-cancel{
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+}
+
+.photo-file-upload {
+  font-size: 17px;
+  padding: 5px 0px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+}
+
+.upload-button, .upload-cancel-button {
+  color: #262626;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 2px 15px;
+  background: #fafafa;
+  border: 1px solid #e6e6e6;
+  border-radius: 2px;
+}
+.upload-button {
+  margin-right: 20px;
+}

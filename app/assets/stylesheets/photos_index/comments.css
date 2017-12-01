@@ -33,15 +33,23 @@ h3, h4 {
   font-weight: 700;
 }
 .comments-author-body > h4 {
-  width: 450px;
+  width: 480px;
   overflow-wrap: break-word;
 }
 
 
+.create-comment-form{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 538px;
+}
 .new-comment-body {
   width: 500px;
 }
-
+.comments-item {
+  width: 558px;
+}
 
 
 

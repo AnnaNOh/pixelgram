@@ -12,11 +12,26 @@
 .user-img {
   width: 152px;
   height: 152px;
-
-  margin-right: 100px;
+  margin-right: 80px;
+  border-radius: 50%;
+}
+.user-profile-username {
+  margin-right: 35px;
+  font-weight: 500;
+}
+.already-following-button {
+  font-size: 14px;
+  font-weight: 600;
+  height: 30px;
+  padding: 0px 50px;
+  margin-top: 5px;
+  border: 1px solid #dbdbdb;
+  border-radius: 2px;
 }
 
+
 .user-profile-right {
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
 }
@@ -24,7 +39,9 @@
 .user-profile-right-top {
   display: flex;
   flex-direction: row;
+  align-items: center;
   font-size: 32px;
+  margin-bottom: 20px;
 }
 
 .user-profile-right-top > h3 {
@@ -32,20 +49,15 @@
 }
 
 
-.user-profile-right-top > button {
-  padding: 0 24px;
-
-  font-size: 14px;
-  border: 1px solid black;
-  border-radius: 1px;
-}
-
 .user-profile-right-bottom {
   display: flex;
   flex-direction: row;
-  font-size: 16px;
 }
 
 .user-profile-right-bottom > * {
-  margin-right: 20px;
+  margin-right: 45px;
+  font-size: 20px;
+}
+.user-profile-right-bottom > h4 > strong {
+  font-weight: 700;
 }

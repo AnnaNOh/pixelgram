@@ -127,7 +127,7 @@ class PhotoItem extends React.Component {
                   {this.followingButton(photo.author)}
                 </div>
 
-                <div className="photo-show-comment-body">
+                <div className="photo-index-show-comment-body">
                   <div className="photo-show-body">
                     <h3>{photo.author.username}</h3>
                     <h4>{photo.body}</h4>

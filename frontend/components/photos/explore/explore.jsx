@@ -1,20 +1,30 @@
 import React from 'react';
 import ExploreItem from './explore_item';
+import Loading from '../../greeting/loading';
 
 
 class Explore extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      loading: true
+    };
   }
 
   componentDidMount(){
-    this.props.getAllPhotos();
+    this.props.getAllPhotos().then(()=> this.setState({loading: false}));
   }
 
   render(){
+    if (this.state.loading) {
+      return(
+        <Loading />
+      );
+    }
+    else {
     return(
       <div>
-        <h2 className="explore">Explore</h2> 
+        <h2 className="explore">Explore</h2>
         <ul className="explore-index">
           {this.props.photos.sort(function(a,b){return(b.id-a.id);}).map(photo => (
             <ExploreItem
@@ -33,5 +43,5 @@ class Explore extends React.Component {
     );
   }
 }
-
+}
 export default Explore;

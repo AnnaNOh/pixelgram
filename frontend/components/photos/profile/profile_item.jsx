@@ -49,9 +49,11 @@ class ProfileItem extends React.Component {
     return(
       <div className="profile-item-div">
         <li className= "profile-item">
-          <div className="profile-hover">
-            <h3>{photo.likes} likes</h3>
-            <h3>{photo.comments_count} comments</h3>
+          <div
+            onClick={this.openModal}
+            className="profile-hover">
+            <h3 className="left-heart"><i className="fa fa-heart" aria-hidden="true"></i>  {photo.likes}</h3>
+            <h3><i className="fa fa-comment" aria-hidden="true"></i>  {photo.comments_count}</h3>
           </div>
 
           <img
