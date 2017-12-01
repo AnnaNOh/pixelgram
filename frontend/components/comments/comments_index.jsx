@@ -22,19 +22,19 @@ class CommentsIndex extends React.Component {
 
   render(){
     let currentUser = this.props.currentUser;
-
+    let classtag = this.props.classtag;
     return(
-      <div>
-        <ul className="comments-list">
+      <div className={classtag}>
+        <ul className= {classtag + "comments-list"}>
           {this.props.comments.map(comment => (
-            <li key={comment.id} className="comments-item">
+            <li key={comment.id} className={classtag+"comments-item"}>
 
-              <div className="comments-author-body">
+              <div className={classtag+"comments-author-body"}>
                 <h3>{comment.writer}</h3>
                 <h4>{comment.body}</h4>
               </div>
 
-              <div className="photo-comments-right">
+              <div className={classtag+"photo-comments-right"}>
                 {this.deleteButton(comment)}
               </div>
             </li>

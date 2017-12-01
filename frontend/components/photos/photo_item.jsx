@@ -31,14 +31,14 @@ class PhotoItem extends React.Component {
   followingButton(user){
     if (user.followed){
       return (
-        <button className="already-following-button" onClick={()=> this.props.deleteFollow(user.id)}>
+        <button className="modal-already-following-button" onClick={()=> this.props.deleteFollow(user.id)}>
           Following
         </button>
       );
     }
     else {
       return (
-        <button className="notyet-following-button" onClick={()=> this.props.addFollow(user.id)}>
+        <button className="modal-notyet-following-button" onClick={()=> this.props.addFollow(user.id)}>
           Follow
         </button>
       );
@@ -86,6 +86,7 @@ class PhotoItem extends React.Component {
                 <div className="photo-comments">
                   <CommentsIndexContainer
                     photo_id={photo.id}
+                    classtag=""
                   />
 
                 <h5 className="photo-age">{photo.age}</h5>
@@ -117,12 +118,12 @@ class PhotoItem extends React.Component {
               <div className="photo-show-comment">
                 <div className="photo-show-comment-top">
                   <img
-                    className="photo-author-img"
+                    className="modal-photo-author-img"
                     onClick={()=> this.props.history.push(`/user/${photo.author.username}`)}
                     src={photo.author.user_img_url}
                     alt={photo.author.username} />
                   <Link to={`/user/${photo.author.username}`}>
-                    <h3>{photo.author.username}</h3>
+                    <h3 className="modal-photo-author-name">{photo.author.username}</h3>
                   </Link>
                   {this.followingButton(photo.author)}
                 </div>
@@ -135,18 +136,19 @@ class PhotoItem extends React.Component {
 
 
                   <div className="photo-comments">
-                    <CommentsIndexContainer photo_id={photo.id} />
+                    <CommentsIndexContainer photo_id={photo.id} classtag="modal"/>
 
-                    <div className="photo-bottom-icon-bar">
-                      <LikeContainer
-                        photo={photo}
-                        photo_id={photo.id} />
-                      <i className="fa fa-comment-o" aria-hidden="true"></i>
+                    <div className="photo-comments-bottom">
+                      <div className="photo-bottom-icon-bar">
+                        <LikeContainer
+                          photo={photo}
+                          photo_id={photo.id} />
+                        <i className="fa fa-comment-o" aria-hidden="true"></i>
+                      </div>
+                      <h3>{photo.likes} likes</h3>
+                      <h5 className="modal-age">{photo.age}</h5>
+                      <CommentsFormContainer photo_id={photo.id} classtag="modal"/>
                     </div>
-                    <h3>{photo.likes} likes</h3>
-                    <h5>{photo.age}</h5>
-
-                    <CommentsFormContainer photo_id={photo.id} />
 
                   </div>
                 </div>

@@ -19,7 +19,7 @@
   margin-right: 35px;
   font-weight: 500;
 }
-.already-following-button {
+.already-following-button, .notyet-following-button {
   font-size: 14px;
   font-weight: 600;
   height: 30px;

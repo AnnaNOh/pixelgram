@@ -13,7 +13,9 @@
   border: 1px solid #e6e6e6;
   border-radius: 1px;
 }
-
+.photo-show-body {
+  margin-top: 10px;
+}
 .photo-show-modal-div {
   display: flex;
   flex-direction: row;
@@ -21,30 +23,24 @@
 
   background: white;
 }
-
 .photo-show-image {
   width: 600px;
   height: 600px;
 }
-
 .photo-show-comment {
   width: 335px;
   margin-left: 20px;
 }
-
 .photo-show-comment-top {
   display: flex;
   flex-direction: row;
-
 }
-
 .photo-show-body {
   display: flex;
   flex-direction: row;
 }
-
 .close-button {
   font-size: 30px;
-  margin: -0.5% 0 0 -2.5%;
+  margin: 0.125% 0 0 -4.125%;
   font-weight: 700;
 }

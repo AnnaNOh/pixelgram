@@ -30,12 +30,13 @@ class CommentsForm extends React.Component {
   }
 
   render() {
+    let classtag = this.props.classtag;
     return(
       <div>
-        <form className="create-comment-form" onSubmit={this.handleSubmit}>
+        <form className={classtag+"create-comment-form"} onSubmit={this.handleSubmit}>
           <input
             type="text"
-            className="new-comment-body"
+            className={classtag+"new-comment-body"}
             value={this.state.body}
             placeholder="Add a comment..."
             onChange={this.update("body")}

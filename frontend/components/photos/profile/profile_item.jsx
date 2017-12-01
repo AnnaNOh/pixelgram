@@ -66,7 +66,10 @@ class ProfileItem extends React.Component {
         <Modal
           className="photo-show-modal"
           isOpen={this.state.modalIsOpen}
-          onClose={this.closeModal}>
+          onClose={this.closeModal}
+          shouldCloseOnOverlayClick={true}
+          onRequestClose={this.closeModal}
+          >
 
           <div className="photo-show-modal-div">
             <img
@@ -77,12 +80,12 @@ class ProfileItem extends React.Component {
             <div className="photo-show-comment">
               <div className="photo-show-comment-top">
                 <img
-                  className="photo-author-img"
+                  className="modal-photo-author-img"
                   onClick={()=> this.props.history.push(`/user/${photo.author.username}`)}
                   src={photo.author.user_img_url}
                   alt={photo.author.username} />
                 <Link to={`/user/${photo.author.username}`}>
-                  <h3>{photo.author.username}</h3>
+                  <h3 className="modal-photo-author-name">{photo.author.username}</h3>
                 </Link>
                 {this.followingButton(photo.author)}
               </div>
@@ -95,8 +98,9 @@ class ProfileItem extends React.Component {
 
 
                 <div className="photo-comments">
-                  <CommentsIndexContainer photo_id={photo.id} />
+                  <CommentsIndexContainer photo_id={photo.id} classtag="modal"/>
 
+                <div className="photo-comments-bottom">
                   <div className="photo-bottom-icon-bar">
                     <LikeContainer
                       photo={photo}
@@ -106,8 +110,8 @@ class ProfileItem extends React.Component {
                   <h3>{photo.likes} likes</h3>
                   <h5>{photo.age}</h5>
 
-                  <CommentsFormContainer photo_id={photo.id} />
-
+                  <CommentsFormContainer photo_id={photo.id} classtag="modal"/>
+                </div>
                 </div>
               </div>
             </div>
