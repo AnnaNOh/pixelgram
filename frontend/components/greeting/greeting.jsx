@@ -9,20 +9,21 @@ class Greeting extends React.Component {
     if (this.props.formType === "login"){
       return(
         <nav className="login-signup">
-          <Link to="/signup">Sign up</Link>
+          <Link className="login-signup-link" to="/signup">Sign up</Link>
         </nav>
       );
     }
     else if (this.props.formType === "signup"){
       return(
         <nav className="login-signup">
-          <Link to="/login">Log in</Link>
+          <Link className="login-signup-link" to="/login">Log in</Link>
         </nav>
       );
     }
   }
 
   personalGreeting(){
+    console.log(this.props);
     let currentUser = this.props.currentUser;
     if (currentUser){
       return(
@@ -43,7 +44,9 @@ class Greeting extends React.Component {
       );
     }
     else {
-      this.sessionLinks();
+      return(
+        this.sessionLinks()
+      );
     }
   }
 

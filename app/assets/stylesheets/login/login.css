@@ -5,11 +5,13 @@
 .login-form-all{
   width: 100%;
   margin-top: 5%;
+  height: 85vh;
 
   display: inline-flex;
   flex-direction: row;
   justify-content: center;
 }
+
 
 
 .login-image {
@@ -47,6 +49,7 @@
 .login-form-container-signup {
   width: 300px;
   /*margin-top: 1%;*/
+  margin-left: 2%;
   margin-right: 5%;
 
   height: 570px;
@@ -153,4 +156,9 @@
 
 .login-signup-errors{
   margin: 0 auto;
+}
+
+.login-form-all {
+  position: relative;
+  top: 60px;
 }

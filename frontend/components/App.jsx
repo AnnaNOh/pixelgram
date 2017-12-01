@@ -32,8 +32,10 @@ const App = () => (
           />
         </Link>
       </div>
+
       <ProtectedRoute path="/" component={PhotoUpload} />
       <Route path="/" component={GreetingContainer} />
+
     </div>
 
 

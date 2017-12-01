@@ -8,9 +8,16 @@ html, body, main {
   height: 100%;
 }
 
+.test {
+  background-color: blue;
+  height: 1000px;
+  width: 1000px;
+}
+
 .main-body {
   background: #fafafa;
   background-attachment: fixed;
+  border-bottom: 1px solid #e6e6e6;
 }
 
 .nav-container {
@@ -105,12 +112,19 @@ html, body, main {
 }
 
 .login-signup {
-  display: inline-flex;
-  align-content: flex-end;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-left: 250px;
 }
 
-.login-signup > a {
-  padding: 0px 10px;
+.login-signup-link {
+  background: rgb(56, 151, 240);
+  color: white;
+  margin-top: 10px;
+  padding: 4px 25px;
+  border: 1px solid rgb(56, 151, 240);
+  border-radius: 5px;
 }
 
 
