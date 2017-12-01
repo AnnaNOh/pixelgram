@@ -107,6 +107,7 @@
   flex-direction: column;
   min-height: 120px;
   padding: 0px 20px;
+  width: 598px;
 }
 
 .photo-body {
@@ -200,7 +201,7 @@
 }
 .photo-comments {
   width: 325px;
-  height: 520px;
+  /*height: 520px;*/
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -214,6 +215,7 @@
 
 .modalcomments-list {
   height: 370px;
+  overflow-y: scroll;
 }
 .modalcomments-list > li {
   display: flex;
@@ -231,7 +233,7 @@
   font-weight: 700;
 }
 .modalcomments-author-body > h4 {
-  width: 260px;
+  width: 250px;
   overflow-wrap: break-word;
 }
 .modalcreate-comment-form{
@@ -246,8 +248,14 @@
   width: 270px;
 }
 .modalcomments-item {
-  width: 325px;
+  width: 300px;
 }
 .modal-age{
   margin-bottom: 10px;
+}
+.fa-heart {
+  cursor: pointer;
+}
+.photo-author-img {
+  cursor: pointer;
 }

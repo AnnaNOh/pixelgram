@@ -146,26 +146,27 @@ class SessionForm extends React.Component {
           />
 
         <div className="login-form-container-signup">
+          <img
+            className="login-instagram-logo"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png"
+            />
+
+          <h2 className="signup-description">Sign up to see photos and videos from your friends.</h2>
+          {this.renderErrors()}
+
+          <button className="submit-button" onClick={this.handleDemo}>
+            Demo log in
+          </button>
+
+          <div className="login-form-demo-or">
+            <span>
+              OR
+            </span>
+          </div>
+
             <form onSubmit={this.handleSubmit} className="login-form-box">
 
 
-              <img
-                className="login-instagram-logo"
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png"
-              />
-
-              <h2>Sign up to see photos and videos from your friends.</h2>
-              {this.renderErrors()}
-
-              <button className="submit-button" onClick={this.handleDemo}>
-                Demo log in
-              </button>
-
-              <div className="login-form-demo-or">
-                <span>
-                  OR
-                </span>
-              </div>
 
 
               <div className="login-form-entries">

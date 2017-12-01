@@ -71,13 +71,14 @@
 }
 
 
-.login-form-box > h2 {
+.signup-description {
   display: inline-block;
-  width: 260px;
+  width: 250px;
   font-size: 17px;
   font-weight: 700;
-  color: rgb(153, 153, 153);
+  color: #999;
   padding-bottom: 20px;
+  margin: 0 auto;
 }
 
 .login-form-box > h4 {
@@ -92,7 +93,7 @@
   font-size: 15px;
 
   display: inline-block;
-  width: 250px;
+  width: 230px;
   padding-bottom: 20px;
 }
 
@@ -148,4 +149,8 @@
 
 .login-form-box > button {
   margin-bottom: 20px;
+}
+
+.login-signup-errors{
+  margin: 0 auto;
 }
