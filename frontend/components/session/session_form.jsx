@@ -81,7 +81,7 @@ class SessionForm extends React.Component {
         <div className="login-form-container-login">
           <img
             className="login-instagram-logo"
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png"
+            src="http://res.cloudinary.com/annaoh/image/upload/c_crop,h_311,w_760,x_250/v1512167100/Logomakr_2dtne0_fhueti.png"
             />
 
           {this.renderErrors()}
@@ -148,7 +148,7 @@ class SessionForm extends React.Component {
         <div className="login-form-container-signup">
           <img
             className="login-instagram-logo"
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png"
+            src="http://res.cloudinary.com/annaoh/image/upload/c_crop,h_311,w_760,x_250/v1512167100/Logomakr_2dtne0_fhueti.png"
             />
 
           <h2 className="signup-description">Sign up to see photos and videos from your friends.</h2>
