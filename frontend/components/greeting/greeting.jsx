@@ -13,7 +13,7 @@ class Greeting extends React.Component {
         </nav>
       );
     }
-    else if (this.props.formType === "signup"){
+    else {
       return(
         <nav className="login-signup">
           <Link className="login-signup-link" to="/login">Log in</Link>
