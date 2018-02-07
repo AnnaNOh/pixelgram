@@ -25,10 +25,7 @@ const App = () => (
     <div className="nav-container">
       <div className="nav-left">
         <Link to="/">
-          <img
-            className="nav-bar-instagram-logo"
-            src="http://res.cloudinary.com/annaoh/image/upload/v1512167100/Logomakr_2dtne0_fhueti.png"
-          />
+          <img className="nav-bar-instagram-logo" src="http://res.cloudinary.com/annaoh/image/upload/v1512167100/Logomakr_2dtne0_fhueti.png"/>
         </Link>
       </div>
 
