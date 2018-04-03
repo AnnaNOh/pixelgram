@@ -45,7 +45,9 @@ group :development, :test do
   gem 'annotate'
   gem 'pry-rails'
   gem 'spring'
-
+  gem 'rspec_junit_formatter'
+  gem 'rspec-rails', '~> 3.5'
+  gem 'shoulda-matchers', '~> 3.1'
 end
 
 group :development do
@@ -59,6 +61,14 @@ group :development do
   gem 'binding_of_caller'
   gem 'pry-rails'
 end
+
+group :test do
+  gem 'factory_bot_rails', '~> 4.0'
+
+  gem 'faker'
+  gem 'database_cleaner'
+end
+
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
