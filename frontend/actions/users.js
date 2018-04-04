@@ -1,9 +1,8 @@
 import * as APIUtil from '../util/user';
 
+export const RECEIVE_USER = 'RECEIVE_USER';
 
-export const RECEIVE_USER = "RECEIVE_USER";
-
-const receiveUser = user => ({
+export const receiveUser = user => ({
   type: RECEIVE_USER,
   user
 });
@@ -17,5 +16,7 @@ export const addFollow = user_id => dispatch => {
 };
 
 export const deleteFollow = user_id => dispatch => {
-  return APIUtil.deleteFollow(user_id).then(user => dispatch(receiveUser(user)));
+  return APIUtil.deleteFollow(user_id).then(user =>
+    dispatch(receiveUser(user))
+  );
 };
